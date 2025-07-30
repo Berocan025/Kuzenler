@@ -3,180 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUZENLER MT2 - Efsanevi Metin2 Sunucusu | RIO CH</title>
-    <meta name="description" content="KUZENLER MT2 - En gelişmiş Metin2 private server. RIO CH tarafından geliştirildi. Yang kazan, ejderhalarla savaş!">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>KUZENLER MT2 - Professional Metin2 Private Server | RIO CH</title>
+    <meta name="description" content="KUZENLER MT2 - En profesyonel Metin2 private server. RIO CH tarafından geliştirildi. Efsanevi PvP, Guild Wars, Boss Raids.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="rioch-styles.css">
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- RIO CH Loading Screen -->
     <div id="rioch-loading-screen">
         <div class="rioch-loading-content">
-            <div class="rioch-metin-logo">
-                <div class="rioch-logo-dragon"></div>
+            <div class="rioch-loading-logo">
+                <div class="rioch-dragon-emblem">
+                    <i class="fas fa-dragon"></i>
+                </div>
                 <h1>KUZENLER MT2</h1>
-                <p>RIO CH ile Efsanevi Macera</p>
+                <div class="rioch-loading-subtitle">
+                    <i class="fas fa-code"></i>
+                    <span>Powered by RIO CH</span>
+                </div>
             </div>
-            <div class="rioch-loading-bar">
-                <div class="rioch-loading-progress"></div>
+            <div class="rioch-loading-progress-container">
+                <div class="rioch-loading-bar">
+                    <div class="rioch-loading-progress"></div>
+                </div>
+                <div class="rioch-loading-percentage">0%</div>
             </div>
-            <div class="rioch-loading-text">Ejderhalar Uyanıyor...</div>
+            <div class="rioch-loading-status">Metin2 Universe Loading...</div>
         </div>
-        <div class="rioch-loading-particles"></div>
+        <div class="rioch-loading-effects">
+            <div class="rioch-particle"></div>
+            <div class="rioch-particle"></div>
+            <div class="rioch-particle"></div>
+            <div class="rioch-particle"></div>
+            <div class="rioch-particle"></div>
+        </div>
     </div>
 
     <!-- Navigation -->
     <nav class="rioch-navbar">
         <div class="rioch-nav-container">
             <div class="rioch-logo">
-                <div class="rioch-logo-icon">🐉</div>
-                <span class="rioch-logo-text">KUZENLER MT2</span>
-                <div class="rioch-logo-subtitle">RIO CH</div>
+                <div class="rioch-logo-emblem">
+                    <i class="fas fa-dragon"></i>
+                </div>
+                <div class="rioch-logo-content">
+                    <span class="rioch-logo-title">KUZENLER MT2</span>
+                    <span class="rioch-logo-subtitle">RIO CH EDITION</span>
+                </div>
             </div>
+            
             <ul class="rioch-nav-menu">
                 <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
                 <li><a href="#features"><i class="fas fa-star"></i> Özellikler</a></li>
+                <li><a href="#screenshots"><i class="fas fa-images"></i> Galeri</a></li>
                 <li><a href="#characters"><i class="fas fa-users"></i> Sınıflar</a></li>
-                <li><a href="#server"><i class="fas fa-server"></i> Sunucu</a></li>
+                <li><a href="#guild"><i class="fas fa-shield-alt"></i> Loncalar</a></li>
                 <li><a href="#download"><i class="fas fa-download"></i> İndir</a></li>
-                <li><a href="#guild"><i class="fas fa-shield-alt"></i> Lonca</a></li>
             </ul>
-            <div class="rioch-hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <div class="rioch-nav-actions">
+                <button class="rioch-btn rioch-btn-register">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Kayıt Ol</span>
+                </button>
+                <div class="rioch-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Battle Animation -->
     <section id="home" class="rioch-hero">
         <div class="rioch-hero-bg">
-            <!-- Animated Battle Scene -->
-            <div class="rioch-battle-scene">
-                <!-- Warriors Fighting -->
+            <img src="https://i.imgur.com/9xZK8mQ.jpg" alt="Metin2 Background" class="rioch-bg-image">
+            <div class="rioch-hero-overlay"></div>
+            
+            <!-- Battle Animation Layer -->
+            <div class="rioch-battle-layer">
+                <!-- Warriors -->
                 <div class="rioch-warrior rioch-char-1">
-                    <div class="rioch-sword-trail"></div>
-                    <div class="rioch-attack-effect"></div>
+                    <img src="https://i.imgur.com/KqV7x2N.png" alt="Warrior" class="rioch-char-sprite">
+                    <div class="rioch-weapon-trail"></div>
+                    <div class="rioch-skill-effect rioch-berserker"></div>
                 </div>
+                
                 <div class="rioch-ninja rioch-char-2">
-                    <div class="rioch-shadow-clone"></div>
+                    <img src="https://i.imgur.com/H8vR3dM.png" alt="Ninja" class="rioch-char-sprite">
+                    <div class="rioch-stealth-effect"></div>
                     <div class="rioch-shuriken-storm"></div>
                 </div>
-                <div class="rioch-mage rioch-char-3">
-                    <div class="rioch-fireball"></div>
-                    <div class="rioch-magic-circle"></div>
-                    <div class="rioch-lightning-bolt"></div>
+                
+                <div class="rioch-sura rioch-char-3">
+                    <img src="https://i.imgur.com/Lp9Xq4R.png" alt="Sura" class="rioch-char-sprite">
+                    <div class="rioch-dark-magic"></div>
+                    <div class="rioch-enchant-blade"></div>
+                </div>
+                
+                <div class="rioch-shaman rioch-char-4">
+                    <img src="https://i.imgur.com/Y7nK5wX.png" alt="Shaman" class="rioch-char-sprite">
+                    <div class="rioch-healing-light"></div>
+                    <div class="rioch-dragon-roar"></div>
                 </div>
                 
                 <!-- Monsters -->
-                <div class="rioch-metin-stone">
-                    <div class="rioch-metin-glow"></div>
-                    <div class="rioch-metin-sparks"></div>
-                </div>
-                <div class="rioch-dragon-boss">
-                    <div class="rioch-dragon-breath"></div>
-                    <div class="rioch-dragon-wings"></div>
+                <div class="rioch-metin-stone rioch-monster-1">
+                    <img src="https://i.imgur.com/M2xD8vB.png" alt="Metin Stone" class="rioch-monster-sprite">
+                    <div class="rioch-metin-aura"></div>
                 </div>
                 
-                <!-- Combat Effects -->
-                <div class="rioch-combat-effects">
-                    <div class="rioch-sword-clash"></div>
-                    <div class="rioch-explosion-burst"></div>
-                    <div class="rioch-healing-light"></div>
-                    <div class="rioch-critical-hit"></div>
+                <div class="rioch-boss-hydra rioch-monster-2">
+                    <img src="https://i.imgur.com/P5nR7wK.png" alt="Hydra Boss" class="rioch-monster-sprite">
+                    <div class="rioch-breath-attack"></div>
+                </div>
+                
+                <!-- Battle Effects -->
+                <div class="rioch-battle-effects">
+                    <div class="rioch-explosion rioch-explosion-1"></div>
+                    <div class="rioch-explosion rioch-explosion-2"></div>
+                    <div class="rioch-lightning-strike"></div>
+                    <div class="rioch-fire-blast"></div>
                 </div>
                 
                 <!-- Damage Numbers -->
-                <div class="rioch-damage-display">
-                    <span class="rioch-dmg rioch-critical">-12,845</span>
-                    <span class="rioch-dmg rioch-normal">-3,240</span>
-                    <span class="rioch-heal">+2,150</span>
-                    <span class="rioch-miss">KAÇTI!</span>
-                    <span class="rioch-block">BLOK!</span>
+                <div class="rioch-damage-numbers">
+                    <div class="rioch-damage rioch-critical">-15,847</div>
+                    <div class="rioch-damage rioch-normal">-5,234</div>
+                    <div class="rioch-damage rioch-poison">-1,890</div>
+                    <div class="rioch-heal">+3,456</div>
+                    <div class="rioch-miss">MISS</div>
+                    <div class="rioch-resist">RESIST</div>
                 </div>
             </div>
-            <div class="rioch-hero-overlay"></div>
         </div>
         
         <div class="rioch-hero-content">
-            <div class="rioch-floating-elements">
-                <div class="rioch-yang-coin">💰</div>
-                <div class="rioch-sword-icon">⚔️</div>
-                <div class="rioch-dragon-icon">🐲</div>
-                <div class="rioch-gem-icon">💎</div>
-                <div class="rioch-scroll-icon">📜</div>
-            </div>
-            
             <div class="rioch-hero-main">
+                <div class="rioch-server-badge">
+                    <i class="fas fa-server"></i>
+                    <span>PROFESSIONAL SERVER</span>
+                </div>
+                
                 <h1 class="rioch-hero-title">
                     <span class="rioch-title-main">KUZENLER MT2</span>
-                    <span class="rioch-title-sub">⚔️ Efsanevi Savaş Dünyası ⚔️</span>
+                    <span class="rioch-title-sub">The Ultimate Metin2 Experience</span>
                 </h1>
                 
                 <div class="rioch-hero-description">
-                    <p>RIO CH'nin ustalığıyla crafted en epik Metin2 deneyimi!</p>
-                    <p>Yang toplayın, ejderhaları yenin, loncaları yönetin ve İmparator olun!</p>
+                    <p>RIO CH'nin profesyonel geliştirme ekibi tarafından crafted edilmiş en gelişmiş Metin2 private server deneyimi.</p>
+                    <p>Epic PvP savaşları, Guild Wars, Boss Raids ve sınırsız macera seni bekliyor!</p>
                 </div>
                 
-                <div class="rioch-server-status">
-                    <div class="rioch-status-item">
-                        <span class="rioch-status-dot rioch-online"></span>
-                        <span>Sunucu Online</span>
+                <div class="rioch-server-info">
+                    <div class="rioch-server-stats">
+                        <div class="rioch-stat-item">
+                            <div class="rioch-stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="rioch-stat-content">
+                                <span class="rioch-stat-number" data-target="3847">0</span>
+                                <span class="rioch-stat-label">Online Players</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rioch-stat-item">
+                            <div class="rioch-stat-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="rioch-stat-content">
+                                <span class="rioch-stat-number" data-target="156">0</span>
+                                <span class="rioch-stat-label">Active Guilds</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rioch-stat-item">
+                            <div class="rioch-stat-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="rioch-stat-content">
+                                <span class="rioch-stat-number" data-target="120">0</span>
+                                <span class="rioch-stat-label">Max Level</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="rioch-status-item">
-                        <span class="rioch-player-count">2,847</span>
-                        <span>Aktif Oyuncu</span>
-                    </div>
-                    <div class="rioch-status-item">
-                        <span class="rioch-cap">Lv. 120</span>
-                        <span>Max Level</span>
+                    
+                    <div class="rioch-server-rates">
+                        <div class="rioch-rate-card">
+                            <i class="fas fa-bolt"></i>
+                            <span class="rioch-rate-value">x15</span>
+                            <span class="rioch-rate-label">EXP Rate</span>
+                        </div>
+                        <div class="rioch-rate-card">
+                            <i class="fas fa-coins"></i>
+                            <span class="rioch-rate-value">x8</span>
+                            <span class="rioch-rate-label">Yang Rate</span>
+                        </div>
+                        <div class="rioch-rate-card">
+                            <i class="fas fa-gem"></i>
+                            <span class="rioch-rate-value">x3</span>
+                            <span class="rioch-rate-label">Drop Rate</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="rioch-hero-buttons">
+                <div class="rioch-hero-actions">
                     <button class="rioch-btn rioch-btn-primary rioch-btn-download">
                         <i class="fas fa-download"></i>
-                        <span>Oyunu İndir</span>
-                        <div class="rioch-btn-shine"></div>
+                        <span>Download Game</span>
+                        <div class="rioch-btn-glow"></div>
                     </button>
-                    <button class="rioch-btn rioch-btn-discord">
+                    <button class="rioch-btn rioch-btn-secondary rioch-btn-discord">
                         <i class="fab fa-discord"></i>
-                        <span>Discord'a Katıl</span>
+                        <span>Join Discord</span>
                     </button>
-                    <button class="rioch-btn rioch-btn-trailer">
+                    <button class="rioch-btn rioch-btn-tertiary rioch-btn-trailer">
                         <i class="fab fa-youtube"></i>
-                        <span>Trailer İzle</span>
+                        <span>Watch Trailer</span>
                     </button>
-                </div>
-                
-                <div class="rioch-server-rates">
-                    <div class="rioch-rate-item">
-                        <span class="rioch-rate-value">x15</span>
-                        <span class="rioch-rate-label">EXP</span>
-                    </div>
-                    <div class="rioch-rate-item">
-                        <span class="rioch-rate-value">x10</span>
-                        <span class="rioch-rate-label">Yang</span>
-                    </div>
-                    <div class="rioch-rate-item">
-                        <span class="rioch-rate-value">x5</span>
-                        <span class="rioch-rate-label">Drop</span>
-                    </div>
-                    <div class="rioch-rate-item">
-                        <span class="rioch-rate-value">P2W Yok</span>
-                        <span class="rioch-rate-label">Fair Play</span>
-                    </div>
                 </div>
             </div>
         </div>
         
         <div class="rioch-scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-            <span>Keşfetmeye Devam Et</span>
+            <div class="rioch-scroll-mouse">
+                <div class="rioch-scroll-wheel"></div>
+            </div>
+            <span>Scroll to Explore</span>
         </div>
     </section>
 
@@ -184,412 +241,468 @@
     <section id="features" class="rioch-features">
         <div class="rioch-container">
             <div class="rioch-section-header">
-                <h2 class="rioch-section-title">🏆 Neden KUZENLER MT2? 🏆</h2>
-                <p class="rioch-section-subtitle">RIO CH'nin mükemmeliyetçi yaklaşımıyla crafted özellikler</p>
+                <div class="rioch-section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>PREMIUM FEATURES</span>
+                </div>
+                <h2 class="rioch-section-title">Why Choose KUZENLER MT2?</h2>
+                <p class="rioch-section-subtitle">Experience the most advanced Metin2 private server crafted by RIO CH's professional development team</p>
             </div>
             
             <div class="rioch-features-grid">
-                <div class="rioch-feature-card rioch-yang-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-coins"></i>
-                        <div class="rioch-icon-glow"></div>
+                <div class="rioch-feature-card rioch-feature-pvp">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/R8kJ9mX.jpg" alt="Epic PvP Battles" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-sword"></i>
+                        </div>
                     </div>
-                    <h3>💰 Gelişmiş Yang Ekonomisi</h3>
-                    <p>Balık tutma, mining, ticaret ve daily questler ile yang birikimi. RIO CH'nin özel ekonomi sistemi!</p>
-                    <div class="rioch-feature-stats">
-                        <span>Daily Yang: 50M+</span>
-                    </div>
-                </div>
-                
-                <div class="rioch-feature-card rioch-dragon-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-dragon"></i>
-                        <div class="rioch-icon-glow"></div>
-                    </div>
-                    <h3>🐉 Ejder Mühür & Craft</h3>
-                    <p>Güçlü ejder mühürleri, şaman büyüleri ve efsanevi item craftlama sistemi!</p>
-                    <div class="rioch-feature-stats">
-                        <span>+9 Garanti Sistemi</span>
+                    <div class="rioch-feature-content">
+                        <h3>Epic PvP Battles</h3>
+                        <p>Experience intense player vs player combat in Valley of Seungryong, Guild Wars, and open world PvP zones with balanced gameplay.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> Balanced PvP System</li>
+                            <li><i class="fas fa-check"></i> Guild Wars Every Day</li>
+                            <li><i class="fas fa-check"></i> PvP Ranking System</li>
+                            <li><i class="fas fa-check"></i> Red Player Rewards</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="rioch-feature-card rioch-pvp-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-sword"></i>
-                        <div class="rioch-icon-glow"></div>
+                <div class="rioch-feature-card rioch-feature-economy">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/V9nH2kL.jpg" alt="Advanced Economy" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-coins"></i>
+                        </div>
                     </div>
-                    <h3>⚔️ Epic PvP Savaşları</h3>
-                    <p>Valley of Seungryong, Guild Wars, Desert battles ve Red Player hunting!</p>
-                    <div class="rioch-feature-stats">
-                        <span>24/7 PvP Aktif</span>
-                    </div>
-                </div>
-                
-                <div class="rioch-feature-card rioch-guild-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="rioch-icon-glow"></div>
-                    </div>
-                    <h3>🛡️ Lonca Sistemi</h3>
-                    <p>Guild land ownage, lonca savaşları, özel guild buffs ve liderlik yarışı!</p>
-                    <div class="rioch-feature-stats">
-                        <span>50+ Aktif Lonca</span>
+                    <div class="rioch-feature-content">
+                        <h3>Advanced Economy</h3>
+                        <p>Sophisticated yang economy with fishing, mining, trading systems and daily quests to build your fortune.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> Daily Yang Rewards</li>
+                            <li><i class="fas fa-check"></i> Fishing & Mining</li>
+                            <li><i class="fas fa-check"></i> Player Market</li>
+                            <li><i class="fas fa-check"></i> Premium Shop</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="rioch-feature-card rioch-dungeon-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-dungeon"></i>
-                        <div class="rioch-icon-glow"></div>
+                <div class="rioch-feature-card rioch-feature-raids">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/K7qX3nR.jpg" alt="Boss Raids" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-dragon"></i>
+                        </div>
                     </div>
-                    <h3>🏰 Dungeons & Raids</h3>
-                    <p>Devil's Catacomb, Dragon Lair, Demon Tower ve özel raid boss encounters!</p>
-                    <div class="rioch-feature-stats">
-                        <span>15+ Dungeon</span>
+                    <div class="rioch-feature-content">
+                        <h3>Epic Boss Raids</h3>
+                        <p>Challenge massive raid bosses with your guild members. Defeat legendary creatures for exclusive rewards and glory.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> 15+ Raid Bosses</li>
+                            <li><i class="fas fa-check"></i> Guild Cooperation</li>
+                            <li><i class="fas fa-check"></i> Exclusive Loot</li>
+                            <li><i class="fas fa-check"></i> Boss Schedules</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="rioch-feature-card rioch-event-feature">
-                    <div class="rioch-feature-bg"></div>
-                    <div class="rioch-feature-icon">
-                        <i class="fas fa-gift"></i>
-                        <div class="rioch-icon-glow"></div>
+                <div class="rioch-feature-card rioch-feature-crafting">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/Q2wY5vB.jpg" alt="Crafting System" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-hammer"></i>
+                        </div>
                     </div>
-                    <h3>🎁 Daily Events</h3>
-                    <p>OX Quiz, Balık Yarışması, Mining Event, Boss Hunting ve özel ödüller!</p>
-                    <div class="rioch-feature-stats">
-                        <span>Günde 8+ Event</span>
+                    <div class="rioch-feature-content">
+                        <h3>Advanced Crafting</h3>
+                        <p>Upgrade your equipment to +9 with our safe enhancement system. Craft legendary items and dragon soul stones.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> Safe +9 System</li>
+                            <li><i class="fas fa-check"></i> Dragon Soul Craft</li>
+                            <li><i class="fas fa-check"></i> Item Combination</li>
+                            <li><i class="fas fa-check"></i> Legendary Gear</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rioch-feature-card rioch-feature-events">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/T4xM8dF.jpg" alt="Daily Events" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="rioch-feature-content">
+                        <h3>Daily Events</h3>
+                        <p>Participate in exciting daily events including OX Quiz, fishing tournaments, mining competitions and special celebrations.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> OX Quiz Events</li>
+                            <li><i class="fas fa-check"></i> Fishing Tournament</li>
+                            <li><i class="fas fa-check"></i> Mining Competition</li>
+                            <li><i class="fas fa-check"></i> Holiday Events</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="rioch-feature-card rioch-feature-dungeons">
+                    <div class="rioch-feature-media">
+                        <img src="https://i.imgur.com/A6vN9kS.jpg" alt="Dungeons" class="rioch-feature-image">
+                        <div class="rioch-feature-overlay">
+                            <i class="fas fa-dungeon"></i>
+                        </div>
+                    </div>
+                    <div class="rioch-feature-content">
+                        <h3>Epic Dungeons</h3>
+                        <p>Explore challenging dungeons including Devil's Catacomb, Dragon Lair, and Demon Tower with your party members.</p>
+                        <ul class="rioch-feature-list">
+                            <li><i class="fas fa-check"></i> Devil's Catacomb</li>
+                            <li><i class="fas fa-check"></i> Dragon Lair</li>
+                            <li><i class="fas fa-check"></i> Demon Tower</li>
+                            <li><i class="fas fa-check"></i> Party Rewards</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Characters Section -->
+    <!-- Screenshots Gallery -->
+    <section id="screenshots" class="rioch-screenshots">
+        <div class="rioch-container">
+            <div class="rioch-section-header">
+                <div class="rioch-section-badge">
+                    <i class="fas fa-images"></i>
+                    <span>GAME GALLERY</span>
+                </div>
+                <h2 class="rioch-section-title">Epic Moments</h2>
+                <p class="rioch-section-subtitle">Witness the stunning visuals and epic battles of KUZENLER MT2</p>
+            </div>
+            
+            <div class="rioch-gallery-grid">
+                <div class="rioch-gallery-item rioch-gallery-large">
+                    <img src="https://i.imgur.com/P9vR4kX.jpg" alt="Guild War Battle" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>Epic Guild Wars</h3>
+                            <p>Massive battles between the strongest guilds for territory control</p>
+                            <button class="rioch-btn rioch-btn-ghost">
+                                <i class="fas fa-expand"></i>
+                                <span>View Full</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-gallery-item">
+                    <img src="https://i.imgur.com/L8nK5mR.jpg" alt="Boss Raid" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>Dragon Boss Raid</h3>
+                            <p>Team up to defeat legendary bosses</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-gallery-item">
+                    <img src="https://i.imgur.com/M3xD7wQ.jpg" alt="PvP Battle" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>1vs1 PvP Arena</h3>
+                            <p>Intense duels in the arena</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-gallery-item">
+                    <img src="https://i.imgur.com/N4yF8sT.jpg" alt="Dungeon" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>Devil's Catacomb</h3>
+                            <p>Explore dark dungeons</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-gallery-item">
+                    <img src="https://i.imgur.com/O5zG9uV.jpg" alt="Event" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>OX Quiz Event</h3>
+                            <p>Daily knowledge competitions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-gallery-item">
+                    <img src="https://i.imgur.com/W6vH0xK.jpg" alt="Character" class="rioch-gallery-image">
+                    <div class="rioch-gallery-overlay">
+                        <div class="rioch-gallery-content">
+                            <h3>Character Customization</h3>
+                            <p>Create your unique warrior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Classes -->
     <section id="characters" class="rioch-characters">
         <div class="rioch-container">
             <div class="rioch-section-header">
-                <h2 class="rioch-section-title">⚔️ Savaşçı Sınıfları ⚔️</h2>
-                <p class="rioch-section-subtitle">Hangi savaşçı ruhu senin içinde yaşıyor?</p>
+                <div class="rioch-section-badge">
+                    <i class="fas fa-users"></i>
+                    <span>WARRIOR CLASSES</span>
+                </div>
+                <h2 class="rioch-section-title">Choose Your Destiny</h2>
+                <p class="rioch-section-subtitle">Select from four unique character classes, each with their own skills and combat style</p>
             </div>
             
             <div class="rioch-characters-showcase">
-                <div class="rioch-character-card rioch-warrior-card">
-                    <div class="rioch-char-bg rioch-warrior-bg"></div>
+                <div class="rioch-character-card rioch-char-warrior">
+                    <div class="rioch-char-bg">
+                        <img src="https://i.imgur.com/X8mK2dN.jpg" alt="Warrior Background" class="rioch-char-bg-image">
+                        <div class="rioch-char-overlay"></div>
+                    </div>
                     <div class="rioch-char-model">
-                        <div class="rioch-char-aura rioch-warrior-aura"></div>
-                        <div class="rioch-char-weapon rioch-sword-effect"></div>
+                        <img src="https://i.imgur.com/Z9nL4eP.png" alt="Warrior Model" class="rioch-char-sprite">
+                        <div class="rioch-char-effects">
+                            <div class="rioch-weapon-glow"></div>
+                            <div class="rioch-battle-aura"></div>
+                        </div>
                     </div>
                     <div class="rioch-char-info">
-                        <h3>🗡️ Savaşçı (Warrior)</h3>
-                        <p>Brutka gücü ve zırhlı savunma. Yakın dövüş ustası.</p>
+                        <div class="rioch-char-header">
+                            <i class="fas fa-sword"></i>
+                            <h3>Warrior</h3>
+                            <span class="rioch-char-type">Melee Fighter</span>
+                        </div>
+                        <p class="rioch-char-description">
+                            Masters of close combat with incredible strength and defensive capabilities. 
+                            Specializes in powerful sword techniques and battlefield dominance.
+                        </p>
                         <div class="rioch-char-skills">
-                            <span class="rioch-skill">Berserker</span>
-                            <span class="rioch-skill">Bash</span>
-                            <span class="rioch-skill">Sword Strike</span>
+                            <div class="rioch-skill">
+                                <i class="fas fa-bolt"></i>
+                                <span>Berserker</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-fist-raised"></i>
+                                <span>Bash</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-sword"></i>
+                                <span>Sword Strike</span>
+                            </div>
                         </div>
                         <div class="rioch-char-stats">
                             <div class="rioch-stat">
-                                <span>Saldırı</span>
+                                <span class="rioch-stat-label">Attack</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 95%"></div>
+                                    <div class="rioch-stat-fill" data-width="95"></div>
                                 </div>
+                                <span class="rioch-stat-value">95%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Savunma</span>
+                                <span class="rioch-stat-label">Defense</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 90%"></div>
+                                    <div class="rioch-stat-fill" data-width="90"></div>
                                 </div>
+                                <span class="rioch-stat-value">90%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Hız</span>
+                                <span class="rioch-stat-label">Speed</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 60%"></div>
+                                    <div class="rioch-stat-fill" data-width="65"></div>
                                 </div>
+                                <span class="rioch-stat-value">65%</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="rioch-character-card rioch-ninja-card">
-                    <div class="rioch-char-bg rioch-ninja-bg"></div>
+                <div class="rioch-character-card rioch-char-ninja">
+                    <div class="rioch-char-bg">
+                        <img src="https://i.imgur.com/Y7mN3eQ.jpg" alt="Ninja Background" class="rioch-char-bg-image">
+                        <div class="rioch-char-overlay"></div>
+                    </div>
                     <div class="rioch-char-model">
-                        <div class="rioch-char-aura rioch-ninja-aura"></div>
-                        <div class="rioch-char-weapon rioch-dagger-effect"></div>
+                        <img src="https://i.imgur.com/A8oP5fR.png" alt="Ninja Model" class="rioch-char-sprite">
+                        <div class="rioch-char-effects">
+                            <div class="rioch-stealth-aura"></div>
+                            <div class="rioch-shadow-clone"></div>
+                        </div>
                     </div>
                     <div class="rioch-char-info">
-                        <h3>🥷 Ninja (Assassin)</h3>
-                        <p>Hızlı saldırılar ve gölgeler. Sessiz ölümün efendisi.</p>
+                        <div class="rioch-char-header">
+                            <i class="fas fa-user-ninja"></i>
+                            <h3>Ninja</h3>
+                            <span class="rioch-char-type">Stealth Assassin</span>
+                        </div>
+                        <p class="rioch-char-description">
+                            Swift and deadly assassins who strike from the shadows with critical precision. 
+                            Masters of stealth and rapid assassination techniques.
+                        </p>
                         <div class="rioch-char-skills">
-                            <span class="rioch-skill">Stealth</span>
-                            <span class="rioch-skill">Critical</span>
-                            <span class="rioch-skill">Shadow Clone</span>
+                            <div class="rioch-skill">
+                                <i class="fas fa-eye-slash"></i>
+                                <span>Stealth</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-star"></i>
+                                <span>Critical Hit</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-clone"></i>
+                                <span>Shadow Clone</span>
+                            </div>
                         </div>
                         <div class="rioch-char-stats">
                             <div class="rioch-stat">
-                                <span>Saldırı</span>
+                                <span class="rioch-stat-label">Attack</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 85%"></div>
+                                    <div class="rioch-stat-fill" data-width="88"></div>
                                 </div>
+                                <span class="rioch-stat-value">88%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Savunma</span>
+                                <span class="rioch-stat-label">Defense</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 65%"></div>
+                                    <div class="rioch-stat-fill" data-width="70"></div>
                                 </div>
+                                <span class="rioch-stat-value">70%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Hız</span>
+                                <span class="rioch-stat-label">Speed</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 95%"></div>
+                                    <div class="rioch-stat-fill" data-width="95"></div>
                                 </div>
+                                <span class="rioch-stat-value">95%</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="rioch-character-card rioch-mage-card">
-                    <div class="rioch-char-bg rioch-mage-bg"></div>
+                <div class="rioch-character-card rioch-char-sura">
+                    <div class="rioch-char-bg">
+                        <img src="https://i.imgur.com/B9qR6gS.jpg" alt="Sura Background" class="rioch-char-bg-image">
+                        <div class="rioch-char-overlay"></div>
+                    </div>
                     <div class="rioch-char-model">
-                        <div class="rioch-char-aura rioch-mage-aura"></div>
-                        <div class="rioch-char-weapon rioch-staff-effect"></div>
+                        <img src="https://i.imgur.com/C0sT7hU.png" alt="Sura Model" class="rioch-char-sprite">
+                        <div class="rioch-char-effects">
+                            <div class="rioch-dark-magic"></div>
+                            <div class="rioch-enchant-blade"></div>
+                        </div>
                     </div>
                     <div class="rioch-char-info">
-                        <h3>🧙‍♀️ Büyücü (Mage)</h3>
-                        <p>Elementel büyüler ve healing. Bilgeliğin gücü.</p>
+                        <div class="rioch-char-header">
+                            <i class="fas fa-magic"></i>
+                            <h3>Sura</h3>
+                            <span class="rioch-char-type">Dark Warrior</span>
+                        </div>
+                        <p class="rioch-char-description">
+                            Dark magic wielders who combine sword combat with destructive spells. 
+                            Balance between physical prowess and magical devastation.
+                        </p>
                         <div class="rioch-char-skills">
-                            <span class="rioch-skill">Fireball</span>
-                            <span class="rioch-skill">Lightning</span>
-                            <span class="rioch-skill">Heal</span>
+                            <div class="rioch-skill">
+                                <i class="fas fa-fire"></i>
+                                <span>Dark Strike</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-skull"></i>
+                                <span>Death Blow</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-magic"></i>
+                                <span>Enchant Blade</span>
+                            </div>
                         </div>
                         <div class="rioch-char-stats">
                             <div class="rioch-stat">
-                                <span>Saldırı</span>
+                                <span class="rioch-stat-label">Attack</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 90%"></div>
+                                    <div class="rioch-stat-fill" data-width="85"></div>
                                 </div>
+                                <span class="rioch-stat-value">85%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Savunma</span>
+                                <span class="rioch-stat-label">Defense</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 55%"></div>
+                                    <div class="rioch-stat-fill" data-width="75"></div>
                                 </div>
+                                <span class="rioch-stat-value">75%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Hız</span>
+                                <span class="rioch-stat-label">Speed</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 75%"></div>
+                                    <div class="rioch-stat-fill" data-width="80"></div>
                                 </div>
+                                <span class="rioch-stat-value">80%</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="rioch-character-card rioch-archer-card">
-                    <div class="rioch-char-bg rioch-archer-bg"></div>
+                <div class="rioch-character-card rioch-char-shaman">
+                    <div class="rioch-char-bg">
+                        <img src="https://i.imgur.com/D1uU8jT.jpg" alt="Shaman Background" class="rioch-char-bg-image">
+                        <div class="rioch-char-overlay"></div>
+                    </div>
                     <div class="rioch-char-model">
-                        <div class="rioch-char-aura rioch-archer-aura"></div>
-                        <div class="rioch-char-weapon rioch-bow-effect"></div>
+                        <img src="https://i.imgur.com/E2vV9kU.png" alt="Shaman Model" class="rioch-char-sprite">
+                        <div class="rioch-char-effects">
+                            <div class="rioch-healing-aura"></div>
+                            <div class="rioch-dragon-power"></div>
+                        </div>
                     </div>
                     <div class="rioch-char-info">
-                        <h3>🏹 Okçu (Archer)</h3>
-                        <p>Uzak mesafe ustası. Hassas nişan ve critical shots.</p>
+                        <div class="rioch-char-header">
+                            <i class="fas fa-hand-sparkles"></i>
+                            <h3>Shaman</h3>
+                            <span class="rioch-char-type">Dragon Mage</span>
+                        </div>
+                        <p class="rioch-char-description">
+                            Masters of dragon magic with powerful healing and support abilities. 
+                            Essential for group battles with devastating area attacks.
+                        </p>
                         <div class="rioch-char-skills">
-                            <span class="rioch-skill">Arrow Rain</span>
-                            <span class="rioch-skill">Eagle Eye</span>
-                            <span class="rioch-skill">Fire Arrow</span>
+                            <div class="rioch-skill">
+                                <i class="fas fa-dragon"></i>
+                                <span>Dragon Roar</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-heart"></i>
+                                <span>Healing Light</span>
+                            </div>
+                            <div class="rioch-skill">
+                                <i class="fas fa-bolt"></i>
+                                <span>Lightning</span>
+                            </div>
                         </div>
                         <div class="rioch-char-stats">
                             <div class="rioch-stat">
-                                <span>Saldırı</span>
+                                <span class="rioch-stat-label">Attack</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 88%"></div>
+                                    <div class="rioch-stat-fill" data-width="78"></div>
                                 </div>
+                                <span class="rioch-stat-value">78%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Savunma</span>
+                                <span class="rioch-stat-label">Defense</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 70%"></div>
+                                    <div class="rioch-stat-fill" data-width="85"></div>
                                 </div>
+                                <span class="rioch-stat-value">85%</span>
                             </div>
                             <div class="rioch-stat">
-                                <span>Hız</span>
+                                <span class="rioch-stat-label">Speed</span>
                                 <div class="rioch-stat-bar">
-                                    <div class="rioch-stat-fill" style="width: 80%"></div>
+                                    <div class="rioch-stat-fill" data-width="70"></div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Server Info Section -->
-    <section id="server" class="rioch-server-info">
-        <div class="rioch-container">
-            <div class="rioch-section-header">
-                <h2 class="rioch-section-title">🖥️ Sunucu Bilgileri 🖥️</h2>
-                <p class="rioch-section-subtitle">RIO CH'nin teknolojik altyapısı</p>
-            </div>
-            
-            <div class="rioch-server-grid">
-                <div class="rioch-server-card rioch-rates-card">
-                    <h3>📊 Sunucu Oranları</h3>
-                    <div class="rioch-rates-list">
-                        <div class="rioch-rate">
-                            <span class="rioch-rate-name">EXP Rate:</span>
-                            <span class="rioch-rate-value">x15</span>
-                        </div>
-                        <div class="rioch-rate">
-                            <span class="rioch-rate-name">Yang Rate:</span>
-                            <span class="rioch-rate-value">x10</span>
-                        </div>
-                        <div class="rioch-rate">
-                            <span class="rioch-rate-name">Drop Rate:</span>
-                            <span class="rioch-rate-value">x5</span>
-                        </div>
-                        <div class="rioch-rate">
-                            <span class="rioch-rate-name">Max Level:</span>
-                            <span class="rioch-rate-value">120</span>
-                        </div>
-                        <div class="rioch-rate">
-                            <span class="rioch-rate-name">PvP Zone:</span>
-                            <span class="rioch-rate-value">Aktif</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="rioch-server-card rioch-stats-card">
-                    <h3>📈 Sunucu İstatistikleri</h3>
-                    <div class="rioch-stats-list">
-                        <div class="rioch-server-stat">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <span class="rioch-stat-number" data-target="15247">0</span>
-                                <span class="rioch-stat-label">Toplam Oyuncu</span>
-                            </div>
-                        </div>
-                        <div class="rioch-server-stat">
-                            <i class="fas fa-user-friends"></i>
-                            <div>
-                                <span class="rioch-stat-number" data-target="2847">0</span>
-                                <span class="rioch-stat-label">Online Oyuncu</span>
-                            </div>
-                        </div>
-                        <div class="rioch-server-stat">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <span class="rioch-stat-number" data-target="156">0</span>
-                                <span class="rioch-stat-label">Aktif Lonca</span>
-                            </div>
-                        </div>
-                        <div class="rioch-server-stat">
-                            <i class="fas fa-crown"></i>
-                            <div>
-                                <span class="rioch-stat-number" data-target="789">0</span>
-                                <span class="rioch-stat-label">PvP Kills</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="rioch-server-card rioch-events-card">
-                    <h3>🎪 Aktif Eventler</h3>
-                    <div class="rioch-events-list">
-                        <div class="rioch-event">
-                            <span class="rioch-event-time">14:00</span>
-                            <span class="rioch-event-name">OX Quiz Event</span>
-                        </div>
-                        <div class="rioch-event">
-                            <span class="rioch-event-time">16:00</span>
-                            <span class="rioch-event-name">Fishing Tournament</span>
-                        </div>
-                        <div class="rioch-event">
-                            <span class="rioch-event-time">20:00</span>
-                            <span class="rioch-event-name">Guild War</span>
-                        </div>
-                        <div class="rioch-event">
-                            <span class="rioch-event-time">22:00</span>
-                            <span class="rioch-event-name">Dragon Boss Raid</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="rioch-download">
-        <div class="rioch-container">
-            <div class="rioch-download-content">
-                <div class="rioch-download-left">
-                    <h2>🎮 Maceraya Başla! 🎮</h2>
-                    <p>RIO CH'nin ustalık eseri KUZENLER MT2'yi şimdi ücretsiz indir!</p>
-                    
-                    <div class="rioch-download-features">
-                        <div class="rioch-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Ücretsiz indirme ve kurulum</span>
-                        </div>
-                        <div class="rioch-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Otomatik patcher sistemi</span>
-                        </div>
-                        <div class="rioch-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Anti-virus taramalı güvenli dosyalar</span>
-                        </div>
-                        <div class="rioch-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>24/7 teknik destek</span>
-                        </div>
-                    </div>
-                    
-                    <div class="rioch-download-buttons">
-                        <button class="rioch-btn rioch-btn-mega">
-                            <i class="fas fa-download"></i>
-                            <span>Windows İndir (2.1 GB)</span>
-                            <div class="rioch-btn-glow"></div>
-                        </button>
-                        <button class="rioch-btn rioch-btn-torrent">
-                            <i class="fas fa-magnet"></i>
-                            <span>Torrent İndir</span>
-                        </button>
-                    </div>
-                    
-                    <div class="rioch-system-req">
-                        <h4>💻 Sistem Gereksinimleri:</h4>
-                        <p><strong>OS:</strong> Windows 7/8/10/11 (32-bit/64-bit)</p>
-                        <p><strong>RAM:</strong> 2 GB (4 GB önerilen)</p>
-                        <p><strong>GPU:</strong> DirectX 9.0c uyumlu</p>
-                        <p><strong>HDD:</strong> 3 GB boş alan</p>
-                    </div>
-                </div>
-                
-                <div class="rioch-download-right">
-                    <div class="rioch-download-preview">
-                        <div class="rioch-game-window">
-                            <div class="rioch-window-header">
-                                <span>KUZENLER MT2 - RIO CH Edition</span>
-                                <div class="rioch-window-controls">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
-                            </div>
-                            <div class="rioch-game-screen">
-                                <div class="rioch-game-ui">
-                                    <div class="rioch-hp-bar">HP: 50,000/50,000</div>
-                                    <div class="rioch-mp-bar">MP: 15,000/15,000</div>
-                                    <div class="rioch-exp-bar">EXP: 89% (Level 95)</div>
-                                </div>
-                                <div class="rioch-character-preview"></div>
+                                <span class="rioch-stat-value">70%</span>
                             </div>
                         </div>
                     </div>
@@ -602,75 +715,254 @@
     <section id="guild" class="rioch-guild">
         <div class="rioch-container">
             <div class="rioch-section-header">
-                <h2 class="rioch-section-title">🛡️ En Güçlü Loncalar 🛡️</h2>
-                <p class="rioch-section-subtitle">Hangi lonca senin gücünü hak ediyor?</p>
+                <div class="rioch-section-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>GUILD SYSTEM</span>
+                </div>
+                <h2 class="rioch-section-title">Join the Strongest Guilds</h2>
+                <p class="rioch-section-subtitle">Form alliances, conquer territories, and dominate the battlefield together</p>
             </div>
             
-            <div class="rioch-guild-ranking">
-                <div class="rioch-guild-card rioch-rank-1">
-                    <div class="rioch-guild-rank">👑 #1</div>
-                    <div class="rioch-guild-emblem">🦅</div>
-                    <div class="rioch-guild-info">
-                        <h3>EAGLES_OF_WAR</h3>
-                        <p>Lider: DragonSlayer99</p>
-                        <div class="rioch-guild-stats">
-                            <span>Üye: 50/50</span>
-                            <span>Seviye: 20</span>
-                            <span>Toprak: 15</span>
+            <div class="rioch-guild-content">
+                <div class="rioch-guild-ranking">
+                    <h3>Top Guilds Ranking</h3>
+                    <div class="rioch-guild-list">
+                        <div class="rioch-guild-item rioch-rank-1">
+                            <div class="rioch-guild-rank">
+                                <i class="fas fa-crown"></i>
+                                <span>#1</span>
+                            </div>
+                            <div class="rioch-guild-emblem">
+                                <img src="https://i.imgur.com/G5hR8xM.png" alt="Guild Emblem" class="rioch-guild-logo">
+                            </div>
+                            <div class="rioch-guild-info">
+                                <h4>PHOENIX_WARRIORS</h4>
+                                <div class="rioch-guild-stats">
+                                    <span><i class="fas fa-users"></i> 50 Members</span>
+                                    <span><i class="fas fa-star"></i> Level 20</span>
+                                    <span><i class="fas fa-map"></i> 12 Territories</span>
+                                </div>
+                                <div class="rioch-guild-leader">
+                                    <i class="fas fa-user-crown"></i>
+                                    <span>Leader: DragonSlayer99</span>
+                                </div>
+                            </div>
+                            <div class="rioch-guild-power">2,847,593 Power</div>
+                        </div>
+                        
+                        <div class="rioch-guild-item rioch-rank-2">
+                            <div class="rioch-guild-rank">
+                                <i class="fas fa-medal"></i>
+                                <span>#2</span>
+                            </div>
+                            <div class="rioch-guild-emblem">
+                                <img src="https://i.imgur.com/H6jT9yN.png" alt="Guild Emblem" class="rioch-guild-logo">
+                            </div>
+                            <div class="rioch-guild-info">
+                                <h4>SHADOW_LEGENDS</h4>
+                                <div class="rioch-guild-stats">
+                                    <span><i class="fas fa-users"></i> 48 Members</span>
+                                    <span><i class="fas fa-star"></i> Level 19</span>
+                                    <span><i class="fas fa-map"></i> 10 Territories</span>
+                                </div>
+                                <div class="rioch-guild-leader">
+                                    <i class="fas fa-user-crown"></i>
+                                    <span>Leader: ShadowMaster</span>
+                                </div>
+                            </div>
+                            <div class="rioch-guild-power">2,234,567 Power</div>
+                        </div>
+                        
+                        <div class="rioch-guild-item rioch-rank-3">
+                            <div class="rioch-guild-rank">
+                                <i class="fas fa-trophy"></i>
+                                <span>#3</span>
+                            </div>
+                            <div class="rioch-guild-emblem">
+                                <img src="https://i.imgur.com/I7kU0zO.png" alt="Guild Emblem" class="rioch-guild-logo">
+                            </div>
+                            <div class="rioch-guild-info">
+                                <h4>THUNDER_GODS</h4>
+                                <div class="rioch-guild-stats">
+                                    <span><i class="fas fa-users"></i> 45 Members</span>
+                                    <span><i class="fas fa-star"></i> Level 18</span>
+                                    <span><i class="fas fa-map"></i> 8 Territories</span>
+                                </div>
+                                <div class="rioch-guild-leader">
+                                    <i class="fas fa-user-crown"></i>
+                                    <span>Leader: ThunderLord</span>
+                                </div>
+                            </div>
+                            <div class="rioch-guild-power">1,987,432 Power</div>
                         </div>
                     </div>
-                    <div class="rioch-guild-power">Power: 2,547,893</div>
                 </div>
                 
-                <div class="rioch-guild-card rioch-rank-2">
-                    <div class="rioch-guild-rank">🥈 #2</div>
-                    <div class="rioch-guild-emblem">🐉</div>
-                    <div class="rioch-guild-info">
-                        <h3>DRAGON_HUNTERS</h3>
-                        <p>Lider: ShadowMaster</p>
-                        <div class="rioch-guild-stats">
-                            <span>Üye: 48/50</span>
-                            <span>Seviye: 19</span>
-                            <span>Toprak: 12</span>
+                <div class="rioch-guild-benefits">
+                    <h3>Guild Benefits</h3>
+                    <div class="rioch-benefits-grid">
+                        <div class="rioch-benefit-card">
+                            <div class="rioch-benefit-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="rioch-benefit-content">
+                                <h4>EXP Bonus</h4>
+                                <span class="rioch-benefit-value">+25%</span>
+                                <p>Extra experience points for all guild members</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rioch-benefit-card">
+                            <div class="rioch-benefit-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="rioch-benefit-content">
+                                <h4>Yang Bonus</h4>
+                                <span class="rioch-benefit-value">+20%</span>
+                                <p>Increased yang drops from monsters and quests</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rioch-benefit-card">
+                            <div class="rioch-benefit-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="rioch-benefit-content">
+                                <h4>Territory Control</h4>
+                                <span class="rioch-benefit-value">Guild Lands</span>
+                                <p>Exclusive access to guild territories and resources</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rioch-benefit-card">
+                            <div class="rioch-benefit-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="rioch-benefit-content">
+                                <h4>Team Events</h4>
+                                <span class="rioch-benefit-value">Guild Wars</span>
+                                <p>Participate in massive guild vs guild battles</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="rioch-guild-power">Power: 2,234,567</div>
-                </div>
-                
-                <div class="rioch-guild-card rioch-rank-3">
-                    <div class="rioch-guild-rank">🥉 #3</div>
-                    <div class="rioch-guild-emblem">⚡</div>
-                    <div class="rioch-guild-info">
-                        <h3>THUNDER_LORDS</h3>
-                        <p>Lider: LightningBolt</p>
-                        <div class="rioch-guild-stats">
-                            <span>Üye: 45/50</span>
-                            <span>Seviye: 18</span>
-                            <span>Toprak: 10</span>
-                        </div>
-                    </div>
-                    <div class="rioch-guild-power">Power: 1,987,432</div>
                 </div>
             </div>
-            
-            <div class="rioch-guild-benefits">
-                <h3>🎁 Lonca Avantajları</h3>
-                <div class="rioch-benefits-grid">
-                    <div class="rioch-benefit">
-                        <i class="fas fa-plus-circle"></i>
-                        <span>%20 EXP Bonusu</span>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="rioch-download">
+        <div class="rioch-container">
+            <div class="rioch-download-content">
+                <div class="rioch-download-left">
+                    <div class="rioch-section-badge">
+                        <i class="fas fa-download"></i>
+                        <span>START PLAYING</span>
                     </div>
-                    <div class="rioch-benefit">
-                        <i class="fas fa-coins"></i>
-                        <span>%15 Yang Bonusu</span>
+                    <h2>Join the Adventure Today!</h2>
+                    <p>Download KUZENLER MT2 and begin your legendary journey in the most advanced Metin2 private server.</p>
+                    
+                    <div class="rioch-download-features">
+                        <div class="rioch-download-feature">
+                            <i class="fas fa-shield-check"></i>
+                            <div class="rioch-feature-text">
+                                <h4>100% Secure</h4>
+                                <p>Virus-free, safe download guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="rioch-download-feature">
+                            <i class="fas fa-rocket"></i>
+                            <div class="rioch-feature-text">
+                                <h4>Instant Setup</h4>
+                                <p>Auto-installer with easy configuration</p>
+                            </div>
+                        </div>
+                        <div class="rioch-download-feature">
+                            <i class="fas fa-headset"></i>
+                            <div class="rioch-feature-text">
+                                <h4>24/7 Support</h4>
+                                <p>Professional technical assistance</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="rioch-benefit">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Guild Land Koruması</span>
+                    
+                    <div class="rioch-download-actions">
+                        <button class="rioch-btn rioch-btn-download-main">
+                            <i class="fab fa-windows"></i>
+                            <div class="rioch-btn-content">
+                                <span class="rioch-btn-title">Download for Windows</span>
+                                <span class="rioch-btn-subtitle">Version 2.4.3 - 2.1 GB</span>
+                            </div>
+                            <div class="rioch-btn-glow"></div>
+                        </button>
+                        
+                        <div class="rioch-download-alternatives">
+                            <button class="rioch-btn rioch-btn-alt">
+                                <i class="fas fa-link"></i>
+                                <span>Direct Link</span>
+                            </button>
+                            <button class="rioch-btn rioch-btn-alt">
+                                <i class="fas fa-download"></i>
+                                <span>Torrent</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="rioch-benefit">
-                        <i class="fas fa-users"></i>
-                        <span>50 Kişilik Ekip</span>
+                    
+                    <div class="rioch-system-requirements">
+                        <h4><i class="fas fa-desktop"></i> System Requirements</h4>
+                        <div class="rioch-requirements-grid">
+                            <div class="rioch-req-item">
+                                <span class="rioch-req-label">OS:</span>
+                                <span class="rioch-req-value">Windows 7/8/10/11</span>
+                            </div>
+                            <div class="rioch-req-item">
+                                <span class="rioch-req-label">RAM:</span>
+                                <span class="rioch-req-value">4 GB (8 GB recommended)</span>
+                            </div>
+                            <div class="rioch-req-item">
+                                <span class="rioch-req-label">GPU:</span>
+                                <span class="rioch-req-value">DirectX 9.0c compatible</span>
+                            </div>
+                            <div class="rioch-req-item">
+                                <span class="rioch-req-label">Storage:</span>
+                                <span class="rioch-req-value">5 GB available space</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rioch-download-right">
+                    <div class="rioch-game-preview">
+                        <div class="rioch-game-window">
+                            <div class="rioch-window-header">
+                                <div class="rioch-window-controls">
+                                    <span class="rioch-control rioch-close"></span>
+                                    <span class="rioch-control rioch-minimize"></span>
+                                    <span class="rioch-control rioch-maximize"></span>
+                                </div>
+                                <span class="rioch-window-title">KUZENLER MT2 - RIO CH Edition</span>
+                            </div>
+                            <div class="rioch-game-screen">
+                                <img src="https://i.imgur.com/Q8xL5nR.jpg" alt="Game Interface" class="rioch-game-screenshot">
+                                <div class="rioch-game-ui">
+                                    <div class="rioch-ui-element rioch-hp-bar">
+                                        <span>HP: 45,890/50,000</span>
+                                        <div class="rioch-bar rioch-health-bar"></div>
+                                    </div>
+                                    <div class="rioch-ui-element rioch-mp-bar">
+                                        <span>MP: 28,750/35,000</span>
+                                        <div class="rioch-bar rioch-mana-bar"></div>
+                                    </div>
+                                    <div class="rioch-ui-element rioch-exp-bar">
+                                        <span>Level 95 - EXP: 78%</span>
+                                        <div class="rioch-bar rioch-experience-bar"></div>
+                                    </div>
+                                </div>
+                                <div class="rioch-character-display">
+                                    <img src="https://i.imgur.com/R9tM6fS.png" alt="Character" class="rioch-char-model">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -681,25 +973,34 @@
     <footer class="rioch-footer">
         <div class="rioch-container">
             <div class="rioch-footer-content">
-                <div class="rioch-footer-section">
+                <div class="rioch-footer-section rioch-footer-main">
                     <div class="rioch-footer-logo">
-                        <h3>🐉 KUZENLER MT2</h3>
-                        <p>RIO CH'nin mükemmeliyetçi yaklaşımıyla geliştirilmiş en epik Metin2 sunucusu!</p>
+                        <div class="rioch-footer-emblem">
+                            <i class="fas fa-dragon"></i>
+                        </div>
+                        <div class="rioch-footer-brand">
+                            <h3>KUZENLER MT2</h3>
+                            <span>Professional Metin2 Server</span>
+                        </div>
                     </div>
-                    <div class="rioch-social-links">
-                        <a href="#" class="rioch-social-discord">
+                    <p class="rioch-footer-description">
+                        Experience the ultimate Metin2 adventure crafted by RIO CH's professional development team. 
+                        Join thousands of players in epic battles, guild wars, and legendary quests.
+                    </p>
+                    <div class="rioch-social-media">
+                        <a href="#" class="rioch-social-link rioch-discord">
                             <i class="fab fa-discord"></i>
                             <span>Discord</span>
                         </a>
-                        <a href="#" class="rioch-social-youtube">
+                        <a href="#" class="rioch-social-link rioch-youtube">
                             <i class="fab fa-youtube"></i>
                             <span>YouTube</span>
                         </a>
-                        <a href="#" class="rioch-social-facebook">
+                        <a href="#" class="rioch-social-link rioch-facebook">
                             <i class="fab fa-facebook"></i>
                             <span>Facebook</span>
                         </a>
-                        <a href="#" class="rioch-social-instagram">
+                        <a href="#" class="rioch-social-link rioch-instagram">
                             <i class="fab fa-instagram"></i>
                             <span>Instagram</span>
                         </a>
@@ -707,72 +1008,89 @@
                 </div>
                 
                 <div class="rioch-footer-section">
-                    <h4>🎮 Oyun</h4>
-                    <ul>
-                        <li><a href="#characters">Sınıflar</a></li>
-                        <li><a href="#features">Özellikler</a></li>
-                        <li><a href="#server">Sunucu Info</a></li>
-                        <li><a href="#guild">Loncalar</a></li>
+                    <h4><i class="fas fa-gamepad"></i> Game</h4>
+                    <ul class="rioch-footer-links">
+                        <li><a href="#characters">Character Classes</a></li>
+                        <li><a href="#features">Server Features</a></li>
+                        <li><a href="#guild">Guild System</a></li>
+                        <li><a href="#screenshots">Game Gallery</a></li>
+                        <li><a href="#download">Download Game</a></li>
                     </ul>
                 </div>
                 
                 <div class="rioch-footer-section">
-                    <h4>📞 Destek</h4>
-                    <ul>
-                        <li><a href="#">İletişim</a></li>
-                        <li><a href="#">SSS</a></li>
-                        <li><a href="#">Teknik Destek</a></li>
-                        <li><a href="#">Bug Raporu</a></li>
+                    <h4><i class="fas fa-info-circle"></i> Information</h4>
+                    <ul class="rioch-footer-links">
+                        <li><a href="#">Server Rules</a></li>
+                        <li><a href="#">Game Guide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">News & Updates</a></li>
+                        <li><a href="#">Event Calendar</a></li>
                     </ul>
                 </div>
                 
                 <div class="rioch-footer-section">
-                    <h4>📜 Kurallar</h4>
-                    <ul>
-                        <li><a href="#">Oyun Kuralları</a></li>
-                        <li><a href="#">Gizlilik Politikası</a></li>
-                        <li><a href="#">Kullanım Şartları</a></li>
-                        <li><a href="#">KVKK</a></li>
+                    <h4><i class="fas fa-headset"></i> Support</h4>
+                    <ul class="rioch-footer-links">
+                        <li><a href="#">Technical Support</a></li>
+                        <li><a href="#">Bug Reports</a></li>
+                        <li><a href="#">Account Issues</a></li>
+                        <li><a href="#">Contact Admin</a></li>
+                        <li><a href="#">Discord Support</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="rioch-footer-bottom">
                 <div class="rioch-footer-left">
-                    <p>&copy; 2024 KUZENLER MT2. Tüm hakları saklıdır.</p>
-                    <p class="rioch-dev-signature">🚀 Crafted with Excellence by <strong>RIO CH</strong> 🚀</p>
+                    <p>&copy; 2024 KUZENLER MT2. All rights reserved.</p>
+                    <p class="rioch-developer-credit">
+                        <i class="fas fa-code"></i>
+                        Crafted with Excellence by <strong>RIO CH</strong>
+                    </p>
                 </div>
                 <div class="rioch-footer-right">
-                    <div class="rioch-server-status-footer">
-                        <span class="rioch-status-dot rioch-online"></span>
-                        <span>Sunucu Online - 2,847 oyuncu</span>
+                    <div class="rioch-server-status">
+                        <div class="rioch-status-indicator">
+                            <span class="rioch-status-dot rioch-online"></span>
+                            <span class="rioch-status-text">Server Online</span>
+                        </div>
+                        <div class="rioch-player-count">
+                            <i class="fas fa-users"></i>
+                            <span>3,847 players online</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Code Protection Modal -->
+    <!-- Protection Modal -->
     <div id="rioch-protection-modal" class="rioch-modal">
         <div class="rioch-modal-content">
             <div class="rioch-modal-header">
-                <i class="fas fa-shield-alt rioch-shield-spin"></i>
-                <h2>🛡️ Kod Koruması Aktif! 🛡️</h2>
+                <div class="rioch-modal-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>Code Protection Active!</h2>
             </div>
             <div class="rioch-modal-body">
                 <div class="rioch-warning-animation">
                     <div class="rioch-warning-pulse"></div>
                 </div>
-                <p><strong>RIO CH YERMİ BU NUMARALARI :)</strong></p>
-                <p>Bu sitenin kaynak kodları RIO CH tarafından korunmaktadır!</p>
-                <p>Geliştirici araçlarını kapatın ve oyunun tadını çıkarın! 🎮</p>
-                <div class="rioch-modal-emojis">
-                    <span>🔒</span><span>⚡</span><span>🚀</span><span>🎯</span>
+                <p class="rioch-warning-message"><strong>RIO CH YERMİ BU NUMARALARI :)</strong></p>
+                <p>This website is protected by RIO CH security systems!</p>
+                <p>Please close developer tools and enjoy the game experience.</p>
+                <div class="rioch-modal-badges">
+                    <span class="rioch-badge"><i class="fas fa-lock"></i> Secured</span>
+                    <span class="rioch-badge"><i class="fas fa-shield-check"></i> Protected</span>
+                    <span class="rioch-badge"><i class="fas fa-code"></i> RIO CH</span>
                 </div>
             </div>
             <div class="rioch-modal-footer">
-                <button class="rioch-btn rioch-btn-primary" onclick="riochCloseModal()">
-                    <i class="fas fa-times"></i> Tamam, Anladım!
+                <button class="rioch-btn rioch-btn-modal-close" onclick="riochCloseModal()">
+                    <i class="fas fa-check"></i>
+                    <span>Understood!</span>
                 </button>
             </div>
         </div>
@@ -780,7 +1098,8 @@
 
     <!-- RIO CH Developer Watermark -->
     <div class="rioch-dev-watermark">
-        <span>💻 RIO CH</span>
+        <i class="fas fa-code"></i>
+        <span>RIO CH</span>
     </div>
 
     <script src="rioch-script.js"></script>

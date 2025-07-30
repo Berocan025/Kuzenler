@@ -1,460 +1,338 @@
-/*
- * KUZENLER MT2 - Interactive Gaming Experience
- * Developed with Excellence by RIO CH
+/**
+ * KUZENLER MT2 - Professional Metin2 Private Server
+ * Advanced JavaScript System by RIO CH
  * All Rights Reserved © 2024 RIO CH
- * Professional Metin2 Gaming JavaScript
+ * Professional Gaming Experience JavaScript
  */
 
-// RIO CH Developer Console Signature
-console.log(`
-🚀 KUZENLER MT2 - RIO CH GAMING MASTERPIECE 🚀
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-▓                                                ▓
-▓        🎮 ULTIMATE METIN2 EXPERIENCE 🎮        ▓
-▓                                                ▓
-▓    Developer: RIO CH                           ▓
-▓    Project: KUZENLER MT2                       ▓
-▓    Year: 2024                                  ▓
-▓    Status: PROTECTED & SECURED                 ▓
-▓                                                ▓
-▓    Features:                                   ▓
-▓    ✅ Advanced Code Protection                 ▓
-▓    ✅ Battle Animations                        ▓
-▓    ✅ Interactive UI/UX                        ▓
-▓    ✅ Mobile Responsive                        ▓
-▓    ✅ Gaming Aesthetics                        ▓
-▓                                                ▓
-▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-
-🛡️ This code is protected by RIO CH Security Systems
-⚡ Optimized for Maximum Gaming Performance
-🎯 Crafted with Passion and Excellence
-`);
-
-// RIO CH Protection System Class
+// ===== RIO CH SECURITY SYSTEM =====
 class RiochSecuritySystem {
     constructor() {
         this.protectionActive = true;
-        this.riochSignature = "RIO CH - Gaming Excellence Since 2024";
         this.warningMessages = [
-            "RIO CH YERMİ BU NUMARALARI :)",
-            "🛡️ RIO CH koruması aktif! Kod incelemek yasak!",
-            "🔒 Bu site RIO CH tarafından korunmaktadır!",
-            "⚡ RIO CH'nin eseri dokunulmaz!",
-            "🎮 Oyunun tadını çıkar, kodu karıştırma!",
-            "🚀 RIO CH teknolojisi ile korunuyor!",
-            "💻 Geliştirici araçlarını kapat ve oyna!"
+            'RIO CH YERMİ BU NUMARALARI :)',
+            'Bu site RIO CH tarafından korunmaktadır!',
+            'Developer tools detected! Site koruması aktif.',
+            'Profesyonel geliştirici tarafından güvence altında.',
+            'RIO CH Security Shield activated!'
         ];
         this.init();
     }
 
     init() {
         this.disableDevTools();
-        this.preventInspection();
-        this.blockShortcuts();
-        this.addWatermarks();
+        this.disableRightClick();
+        this.disableKeyboardShortcuts();
+        this.disableTextSelection();
+        this.disableDragDrop();
         this.monitorConsole();
-        this.setupEventListeners();
+        this.createFloatingWatermarks();
+        this.protectSourceCode();
     }
 
     disableDevTools() {
-        // RIO CH Anti-DevTools
+        // F12 tuşunu devre dışı bırak
         document.addEventListener('keydown', (e) => {
-            // F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+U
             if (e.key === 'F12' || 
-                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'C')) ||
-                (e.ctrlKey && e.key === 'u') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+                (e.ctrlKey && e.shiftKey && e.key === 'C') ||
                 (e.ctrlKey && e.key === 'U')) {
                 e.preventDefault();
-                e.stopPropagation();
-                this.showProtectionModal();
+                this.showWarningModal();
                 return false;
             }
         });
 
-        // RIO CH DevTools Size Detection
+        // DevTools açık mı kontrol et
         setInterval(() => {
             if (window.outerHeight - window.innerHeight > 200 || 
                 window.outerWidth - window.innerWidth > 200) {
-                this.showProtectionModal();
+                this.showWarningModal();
+                // Sayfayı blur yap
+                document.body.style.filter = 'blur(5px)';
+                setTimeout(() => {
+                    document.body.style.filter = 'none';
+                }, 3000);
             }
         }, 1000);
     }
 
-    preventInspection() {
-        // RIO CH Right-click Protection
+    disableRightClick() {
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
-            this.showProtectionModal();
+            this.showWarningModal();
+            return false;
         });
+    }
 
-        // RIO CH Selection Protection
-        document.addEventListener('selectstart', (e) => {
-            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+    disableKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+A, Ctrl+S, Ctrl+P, vb. devre dışı
+            if (e.ctrlKey && ['a', 's', 'p', 'o', 'f'].includes(e.key.toLowerCase())) {
                 e.preventDefault();
+                this.showWarningModal();
+                return false;
             }
         });
+    }
 
-        // RIO CH Drag Protection
+    disableTextSelection() {
+        document.addEventListener('selectstart', (e) => {
+            e.preventDefault();
+            return false;
+        });
+
+        document.onselectstart = () => false;
+        document.onmousedown = () => false;
+    }
+
+    disableDragDrop() {
         document.addEventListener('dragstart', (e) => {
             e.preventDefault();
+            return false;
         });
-    }
-
-    blockShortcuts() {
-        document.addEventListener('keydown', (e) => {
-            // Block Ctrl+S, Ctrl+A, Ctrl+P, Ctrl+Shift+J
-            if (e.ctrlKey && (e.key === 's' || e.key === 'a' || e.key === 'p' ||
-                (e.shiftKey && e.key === 'J'))) {
-                e.preventDefault();
-                this.showProtectionModal();
-            }
-        });
-    }
-
-    addWatermarks() {
-        // RIO CH Floating Watermark
-        const watermark = document.createElement('div');
-        watermark.className = 'rioch-floating-watermark';
-        watermark.innerHTML = '🔒 RIO CH Protected';
-        watermark.style.cssText = `
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: linear-gradient(135deg, #ff6b35, #f7931e);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            z-index: 9998;
-            opacity: 0.7;
-            pointer-events: none;
-            font-family: 'Orbitron', monospace;
-            animation: riochGlow 3s infinite;
-        `;
-        document.body.appendChild(watermark);
     }
 
     monitorConsole() {
-        // RIO CH Console Protection
+        // Console'u monitör et
         const originalLog = console.log;
         console.log = (...args) => {
-            originalLog.apply(console, [`🛡️ RIO CH: `, ...args]);
+            this.showWarningModal();
+            originalLog.apply(console, args);
         };
 
-        // Clear console periodically
-        setInterval(() => {
-            console.clear();
-            console.log(this.riochSignature);
-        }, 10000);
+        // Console clear'ı engelle
+        console.clear = () => {
+            this.showWarningModal();
+        };
     }
 
-    showProtectionModal() {
+    createFloatingWatermarks() {
+        setInterval(() => {
+            const watermark = document.createElement('div');
+            watermark.innerHTML = '💻 RIO CH PROTECTED 🛡️';
+            watermark.style.cssText = `
+                position: fixed;
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                color: rgba(233, 69, 96, 0.3);
+                font-size: 12px;
+                font-weight: bold;
+                z-index: 9998;
+                pointer-events: none;
+                animation: riochFadeOut 3s ease-out forwards;
+                font-family: 'Orbitron', monospace;
+            `;
+            document.body.appendChild(watermark);
+            
+            setTimeout(() => {
+                if (watermark.parentNode) {
+                    watermark.parentNode.removeChild(watermark);
+                }
+            }, 3000);
+        }, 5000);
+    }
+
+    protectSourceCode() {
+        // Objeleri dondur
+        Object.freeze(document);
+        Object.freeze(window);
+        
+        // Anti-tampering
+        const originalStringify = JSON.stringify;
+        JSON.stringify = function(...args) {
+            if (args[0] && typeof args[0] === 'object') {
+                riochSecurity.showWarningModal();
+            }
+            return originalStringify.apply(this, args);
+        };
+    }
+
+    showWarningModal() {
+        if (!this.protectionActive) return;
+        
         const modal = document.getElementById('rioch-protection-modal');
         if (modal) {
-            const randomMessage = this.warningMessages[Math.floor(Math.random() * this.warningMessages.length)];
-            const modalBody = modal.querySelector('.rioch-modal-body p');
-            if (modalBody) {
-                modalBody.innerHTML = `<strong>${randomMessage}</strong>`;
-            }
             modal.style.display = 'block';
-        }
-    }
-
-    setupEventListeners() {
-        window.riochCloseModal = () => {
-            const modal = document.getElementById('rioch-protection-modal');
-            if (modal) {
-                modal.style.display = 'none';
+            
+            // Random mesaj göster
+            const randomMessage = this.warningMessages[Math.floor(Math.random() * this.warningMessages.length)];
+            const messageElement = modal.querySelector('.rioch-warning-message');
+            if (messageElement) {
+                messageElement.textContent = randomMessage;
             }
-        };
+        }
     }
 }
 
-// RIO CH Loading System
+// ===== RIO CH LOADING SYSTEM =====
 class RiochLoadingSystem {
     constructor() {
-        this.loadingScreen = null;
-        this.progressBar = null;
-        this.loadingText = null;
+        this.loadingScreen = document.getElementById('rioch-loading-screen');
+        this.progressBar = document.querySelector('.rioch-loading-progress');
+        this.percentage = document.querySelector('.rioch-loading-percentage');
+        this.status = document.querySelector('.rioch-loading-status');
+        this.currentProgress = 0;
+        this.targetProgress = 0;
+        this.loadingSteps = [
+            'Ejderhalar uyanıyor...',
+            'Savaş alanı hazırlanıyor...',
+            'Karakterler yükleniyor...',
+            'Loncalar organize oluyor...',
+            'Yang ekonomisi başlatılıyor...',
+            'PvP sistemi aktifleştiriliyor...',
+            'Metin taşları yerleştiriliyor...',
+            'Boss raidleri hazırlanıyor...',
+            'RIO CH imzası ekleniyor...',
+            'Metin2 Universe Loading...'
+        ];
+        this.currentStep = 0;
         this.init();
     }
 
     init() {
-        this.createLoadingScreen();
-        this.startLoading();
+        this.simulateLoading();
     }
 
-    createLoadingScreen() {
-        this.loadingScreen = document.getElementById('rioch-loading-screen');
-        this.progressBar = document.querySelector('.rioch-loading-progress');
-        this.loadingText = document.querySelector('.rioch-loading-text');
-    }
-
-    startLoading() {
-        const loadingTexts = [
-            "Ejderhalar Uyanıyor...",
-            "RIO CH Sistemleri Yükleniyor...",
-            "Savaş Arenası Hazırlanıyor...",
-            "Yang Hazineleri Keşfediliyor...",
-            "Lonca Savaşları Başlıyor...",
-            "Metin Taşları Aktivleşiyor...",
-            "KUZENLER MT2 Açılıyor..."
-        ];
-
-        let currentText = 0;
-        let progress = 0;
-
+    simulateLoading() {
         const loadingInterval = setInterval(() => {
-            progress += Math.random() * 15;
+            this.targetProgress += Math.random() * 15 + 5;
             
-            if (progress >= 100) {
-                progress = 100;
+            if (this.targetProgress >= 100) {
+                this.targetProgress = 100;
                 clearInterval(loadingInterval);
-                setTimeout(() => this.hideLoading(), 500);
+                
+                setTimeout(() => {
+                    this.hideLoading();
+                }, 1000);
             }
-
-            this.progressBar.style.width = `${progress}%`;
             
-            if (Math.random() > 0.7 && currentText < loadingTexts.length - 1) {
-                currentText++;
-                this.loadingText.textContent = loadingTexts[currentText];
+            this.updateProgress();
+            this.updateStatus();
+        }, 300);
+    }
+
+    updateProgress() {
+        const progressInterval = setInterval(() => {
+            if (this.currentProgress < this.targetProgress) {
+                this.currentProgress += 2;
+                this.progressBar.style.width = this.currentProgress + '%';
+                this.percentage.textContent = Math.floor(this.currentProgress) + '%';
+            } else {
+                clearInterval(progressInterval);
             }
-        }, 200);
+        }, 50);
+    }
+
+    updateStatus() {
+        if (this.currentStep < this.loadingSteps.length - 1) {
+            this.currentStep++;
+            this.status.textContent = this.loadingSteps[this.currentStep];
+        }
     }
 
     hideLoading() {
-        this.loadingScreen.style.opacity = '0';
+        this.loadingScreen.classList.add('rioch-hidden');
+        document.body.style.overflow = 'auto';
+        
         setTimeout(() => {
             this.loadingScreen.style.display = 'none';
-            document.body.classList.add('rioch-loaded');
-        }, 500);
+            riochAnimations.initScrollAnimations();
+        }, 800);
     }
 }
 
-// RIO CH Animation Controller
+// ===== RIO CH ANIMATION CONTROLLER =====
 class RiochAnimationController {
     constructor() {
-        this.observers = [];
+        this.observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        this.observer = new IntersectionObserver(this.handleIntersection.bind(this), this.observerOptions);
+        this.particleCount = 0;
+        this.maxParticles = 50;
         this.init();
     }
 
     init() {
-        this.setupScrollAnimations();
-        this.setupHoverEffects();
-        this.setupParticleSystem();
-        this.setupTypingEffect();
-        this.setupCounterAnimations();
-        this.setupBattleAnimations();
+        this.initScrollAnimations();
+        this.initHoverEffects();
+        this.initParticleSystem();
+        this.initTypingEffect();
+        this.initCounters();
+        this.initBattleAnimations();
     }
 
-    setupScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('rioch-fadeIn');
-                    entry.target.style.opacity = '1';
-                    
-                    // Trigger counter animations
-                    if (entry.target.classList.contains('rioch-server-stat')) {
-                        this.animateCounter(entry.target.querySelector('.rioch-stat-number'));
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        const elementsToAnimate = document.querySelectorAll(`
-            .rioch-feature-card,
-            .rioch-character-card,
-            .rioch-server-card,
-            .rioch-guild-card,
-            .rioch-section-header,
-            .rioch-server-stat
-        `);
-
-        elementsToAnimate.forEach(el => {
+    initScrollAnimations() {
+        const elements = document.querySelectorAll('.rioch-feature-card, .rioch-character-card, .rioch-gallery-item, .rioch-guild-item, .rioch-benefit-card');
+        elements.forEach(el => {
             el.style.opacity = '0';
-            observer.observe(el);
+            el.style.transform = 'translateY(50px)';
+            this.observer.observe(el);
         });
 
-        this.observers.push(observer);
+        // Character stat bars
+        const characterCards = document.querySelectorAll('.rioch-character-card');
+        characterCards.forEach(card => {
+            this.observer.observe(card);
+        });
     }
 
-    setupHoverEffects() {
-        // RIO CH Enhanced Button Effects
+    handleIntersection(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                element.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+                
+                // Character stats animation
+                if (element.classList.contains('rioch-character-card')) {
+                    element.classList.add('rioch-visible');
+                    this.animateCharacterStats(element);
+                }
+                
+                this.observer.unobserve(element);
+            }
+        });
+    }
+
+    animateCharacterStats(card) {
+        const statBars = card.querySelectorAll('.rioch-stat-fill');
+        statBars.forEach((bar, index) => {
+            setTimeout(() => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            }, index * 200);
+        });
+    }
+
+    initHoverEffects() {
+        // Button hover effects
         const buttons = document.querySelectorAll('.rioch-btn');
         buttons.forEach(btn => {
-            btn.addEventListener('mouseenter', () => {
-                btn.style.transform = 'translateY(-3px) scale(1.05)';
-                this.createButtonParticles(btn);
+            btn.addEventListener('mouseenter', (e) => {
+                this.createButtonParticles(e.target);
+                this.addRippleEffect(e);
             });
             
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translateY(0) scale(1)';
-            });
-
-            btn.addEventListener('click', () => {
-                this.createClickEffect(btn);
+            btn.addEventListener('click', (e) => {
+                this.addRippleEffect(e);
             });
         });
 
-        // RIO CH Card Hover Effects
-        const cards = document.querySelectorAll('.rioch-feature-card, .rioch-character-card, .rioch-server-card');
+        // Card hover effects
+        const cards = document.querySelectorAll('.rioch-feature-card, .rioch-character-card, .rioch-gallery-item');
         cards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-15px) rotateX(5deg)';
-                this.addGlowEffect(card);
+                this.addCardGlow(card);
             });
             
             card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) rotateX(0deg)';
-                this.removeGlowEffect(card);
+                this.removeCardGlow(card);
             });
-        });
-    }
-
-    setupParticleSystem() {
-        // RIO CH Hero Particles
-        const hero = document.querySelector('.rioch-hero');
-        if (hero) {
-            this.createFloatingParticles(hero, 30);
-        }
-
-        // RIO CH Section Particles
-        const sections = document.querySelectorAll('.rioch-features, .rioch-characters');
-        sections.forEach(section => {
-            this.createFloatingParticles(section, 15);
-        });
-    }
-
-    createFloatingParticles(container, count) {
-        for (let i = 0; i < count; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'rioch-floating-particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: ${2 + Math.random() * 4}px;
-                height: ${2 + Math.random() * 4}px;
-                background: #ff6b35;
-                border-radius: 50%;
-                pointer-events: none;
-                opacity: ${0.3 + Math.random() * 0.4};
-                animation: riochParticleFloat ${3 + Math.random() * 4}s linear infinite;
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
-                animation-delay: ${Math.random() * 2}s;
-                z-index: 1;
-            `;
-            container.appendChild(particle);
-        }
-
-        // Add particle animation styles
-        if (!document.getElementById('rioch-particle-styles')) {
-            const style = document.createElement('style');
-            style.id = 'rioch-particle-styles';
-            style.textContent = `
-                @keyframes riochParticleFloat {
-                    0% {
-                        transform: translateY(0px) translateX(0px) rotate(0deg);
-                        opacity: 0.6;
-                    }
-                    50% {
-                        opacity: 1;
-                        transform: translateY(-50px) translateX(${-20 + Math.random() * 40}px) rotate(180deg);
-                    }
-                    100% {
-                        transform: translateY(-100px) translateX(${-40 + Math.random() * 80}px) rotate(360deg);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-    }
-
-    setupTypingEffect() {
-        const heroTitle = document.querySelector('.rioch-title-main');
-        if (heroTitle) {
-            const text = heroTitle.textContent;
-            heroTitle.textContent = '';
-            let index = 0;
-
-            const typeWriter = () => {
-                if (index < text.length) {
-                    heroTitle.textContent += text.charAt(index);
-                    index++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    heroTitle.classList.add('rioch-glow-effect');
-                }
-            };
-
-            setTimeout(typeWriter, 1500);
-        }
-    }
-
-    setupCounterAnimations() {
-        // Auto-animate numbers when visible
-        const counters = document.querySelectorAll('[data-target]');
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-target'));
-            counter.textContent = '0';
-            counter.setAttribute('data-current', '0');
-        });
-    }
-
-    animateCounter(element) {
-        if (!element || element.hasAttribute('data-animated')) return;
-        
-        const target = parseInt(element.getAttribute('data-target'));
-        if (!target) return;
-
-        element.setAttribute('data-animated', 'true');
-        let current = 0;
-        const increment = target / 50;
-        const duration = 2000;
-        const stepTime = duration / 50;
-
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            element.textContent = Math.floor(current).toLocaleString();
-        }, stepTime);
-    }
-
-    setupBattleAnimations() {
-        // RIO CH Battle Scene Animations
-        const battleElements = document.querySelectorAll('.rioch-battle-scene *');
-        battleElements.forEach((element, index) => {
-            element.style.animationDelay = `${index * 0.2}s`;
-        });
-
-        // Damage number animations
-        this.animateDamageNumbers();
-    }
-
-    animateDamageNumbers() {
-        const damageNumbers = document.querySelectorAll('.rioch-dmg, .rioch-heal, .rioch-miss, .rioch-block');
-        damageNumbers.forEach((dmg, index) => {
-            dmg.style.animationDelay = `${index * 0.5}s`;
-            
-            // Restart animation every 3 seconds
-            setInterval(() => {
-                dmg.style.animation = 'none';
-                dmg.offsetHeight; // Trigger reflow
-                dmg.style.animation = 'riochDamageFloat 2s infinite';
-                dmg.style.animationDelay = `${index * 0.5}s`;
-            }, 3000 + index * 500);
         });
     }
 
@@ -465,559 +343,739 @@ class RiochAnimationController {
                 position: absolute;
                 width: 4px;
                 height: 4px;
-                background: #ffd700;
+                background: rgba(255, 255, 255, 0.8);
                 border-radius: 50%;
                 pointer-events: none;
-                left: ${Math.random() * 100}%;
-                top: ${Math.random() * 100}%;
                 animation: riochButtonParticle 1s ease-out forwards;
-                z-index: 1000;
+                top: ${Math.random() * 100}%;
+                left: ${Math.random() * 100}%;
+                z-index: 10;
             `;
+            
             button.style.position = 'relative';
             button.appendChild(particle);
-
-            setTimeout(() => particle.remove(), 1000);
-        }
-
-        // Add button particle animation
-        if (!document.getElementById('rioch-button-particle-styles')) {
-            const style = document.createElement('style');
-            style.id = 'rioch-button-particle-styles';
-            style.textContent = `
-                @keyframes riochButtonParticle {
-                    0% {
-                        transform: scale(0) translateY(0);
-                        opacity: 1;
-                    }
-                    100% {
-                        transform: scale(1) translateY(-20px);
-                        opacity: 0;
-                    }
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
                 }
-            `;
-            document.head.appendChild(style);
+            }, 1000);
         }
     }
 
-    createClickEffect(element) {
+    addRippleEffect(e) {
+        const button = e.currentTarget;
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
         const ripple = document.createElement('div');
         ripple.style.cssText = `
             position: absolute;
-            border-radius: 50%;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
             background: rgba(255, 255, 255, 0.3);
-            width: 100px;
-            height: 100px;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transform: scale(0);
             animation: riochRipple 0.6s ease-out;
             pointer-events: none;
-            z-index: 1000;
         `;
         
-        element.style.position = 'relative';
-        element.appendChild(ripple);
+        button.style.position = 'relative';
+        button.style.overflow = 'hidden';
+        button.appendChild(ripple);
+        
+        setTimeout(() => {
+            if (ripple.parentNode) {
+                ripple.parentNode.removeChild(ripple);
+            }
+        }, 600);
+    }
 
-        setTimeout(() => ripple.remove(), 600);
+    addCardGlow(card) {
+        card.style.boxShadow = '0 0 30px rgba(233, 69, 96, 0.5), 0 20px 40px rgba(0, 0, 0, 0.3)';
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+    }
 
-        // Add ripple animation
-        if (!document.getElementById('rioch-ripple-styles')) {
-            const style = document.createElement('style');
-            style.id = 'rioch-ripple-styles';
-            style.textContent = `
-                @keyframes riochRipple {
-                    to {
-                        transform: translate(-50%, -50%) scale(2);
-                        opacity: 0;
-                    }
-                }
+    removeCardGlow(card) {
+        card.style.boxShadow = '';
+        card.style.transform = '';
+    }
+
+    initParticleSystem() {
+        this.createFloatingParticles();
+        setInterval(() => {
+            this.createFloatingParticles();
+        }, 3000);
+    }
+
+    createFloatingParticles() {
+        if (this.particleCount >= this.maxParticles) return;
+        
+        for (let i = 0; i < 3; i++) {
+            const particle = document.createElement('div');
+            particle.style.cssText = `
+                position: fixed;
+                width: 6px;
+                height: 6px;
+                background: linear-gradient(45deg, #e94560, #ffd700);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: riochFloatUp ${5 + Math.random() * 5}s linear forwards;
+                opacity: 0.7;
             `;
-            document.head.appendChild(style);
+            
+            document.body.appendChild(particle);
+            this.particleCount++;
+            
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.parentNode.removeChild(particle);
+                    this.particleCount--;
+                }
+            }, 10000);
         }
     }
 
-    addGlowEffect(element) {
-        element.style.boxShadow = '0 0 30px rgba(255, 107, 53, 0.6)';
+    initTypingEffect() {
+        const typingElements = document.querySelectorAll('.rioch-hero-description p');
+        typingElements.forEach((element, index) => {
+            const text = element.textContent;
+            element.textContent = '';
+            
+            setTimeout(() => {
+                this.typeText(element, text, 50);
+            }, 2000 + (index * 1000));
+        });
     }
 
-    removeGlowEffect(element) {
-        element.style.boxShadow = '';
+    typeText(element, text, speed) {
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(timer);
+            }
+        }, speed);
+    }
+
+    initCounters() {
+        const counters = document.querySelectorAll('.rioch-stat-number[data-target]');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    }
+
+    animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 2000;
+        const increment = target / (duration / 16);
+        let current = 0;
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 16);
+    }
+
+    initBattleAnimations() {
+        // Hero battle scene animations
+        const battleLayer = document.querySelector('.rioch-battle-layer');
+        if (battleLayer) {
+            this.animateBattleScene();
+        }
+    }
+
+    animateBattleScene() {
+        // Damage numbers animation
+        setInterval(() => {
+            this.createRandomDamage();
+        }, 2000);
+        
+        // Battle effects
+        setInterval(() => {
+            this.createBattleEffect();
+        }, 3000);
+    }
+
+    createRandomDamage() {
+        const damageTypes = ['critical', 'normal', 'poison'];
+        const damages = ['-15,847', '-5,234', '-1,890', '+3,456', 'MISS', 'RESIST'];
+        const colors = ['#ff4757', '#ffa502', '#a55eea', '#2ed573', '#747d8c', '#5352ed'];
+        
+        const damage = document.createElement('div');
+        const randomDamage = damages[Math.floor(Math.random() * damages.length)];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        damage.textContent = randomDamage;
+        damage.style.cssText = `
+            position: absolute;
+            top: ${Math.random() * 80 + 10}%;
+            left: ${Math.random() * 80 + 10}%;
+            color: ${randomColor};
+            font-size: ${1.5 + Math.random()}rem;
+            font-weight: 900;
+            font-family: 'Orbitron', monospace;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+            z-index: 3;
+            animation: riochDamageFloat 3s ease-out forwards;
+        `;
+        
+        const battleLayer = document.querySelector('.rioch-battle-layer');
+        if (battleLayer) {
+            battleLayer.appendChild(damage);
+            
+            setTimeout(() => {
+                if (damage.parentNode) {
+                    damage.parentNode.removeChild(damage);
+                }
+            }, 3000);
+        }
+    }
+
+    createBattleEffect() {
+        const effect = document.createElement('div');
+        effect.style.cssText = `
+            position: absolute;
+            top: ${Math.random() * 70 + 15}%;
+            left: ${Math.random() * 70 + 15}%;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, #e94560, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 2;
+            animation: riochExplosion 2s ease-out forwards;
+        `;
+        
+        const battleLayer = document.querySelector('.rioch-battle-layer');
+        if (battleLayer) {
+            battleLayer.appendChild(effect);
+            
+            setTimeout(() => {
+                if (effect.parentNode) {
+                    effect.parentNode.removeChild(effect);
+                }
+            }, 2000);
+        }
     }
 }
 
-// RIO CH Navigation Controller
+// ===== RIO CH NAVIGATION CONTROLLER =====
 class RiochNavigationController {
     constructor() {
-        this.navbar = null;
-        this.hamburger = null;
-        this.navMenu = null;
+        this.navbar = document.querySelector('.rioch-navbar');
+        this.hamburger = document.querySelector('.rioch-hamburger');
+        this.navMenu = document.querySelector('.rioch-nav-menu');
+        this.navLinks = document.querySelectorAll('.rioch-nav-menu a');
+        this.lastScrollY = window.scrollY;
         this.init();
     }
 
     init() {
-        this.navbar = document.querySelector('.rioch-navbar');
-        this.hamburger = document.querySelector('.rioch-hamburger');
-        this.navMenu = document.querySelector('.rioch-nav-menu');
-        
-        this.setupSmoothScroll();
-        this.setupMobileNavigation();
-        this.setupScrollBehavior();
+        this.initSmoothScroll();
+        this.initMobileMenu();
+        this.initScrollBehavior();
     }
 
-    setupSmoothScroll() {
-        const navLinks = document.querySelectorAll('.rioch-nav-menu a[href^="#"]');
-        const scrollIndicator = document.querySelector('.rioch-scroll-indicator');
-
-        navLinks.forEach(link => {
+    initSmoothScroll() {
+        this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = link.getAttribute('href').slice(1);
-                this.scrollToSection(targetId);
+                const href = link.getAttribute('href');
+                
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                // Mobile menü kapat
+                if (window.innerWidth <= 768) {
+                    this.closeMobileMenu();
+                }
             });
         });
-
-        if (scrollIndicator) {
-            scrollIndicator.addEventListener('click', () => {
-                this.scrollToSection('features');
-            });
-        }
     }
 
-    scrollToSection(sectionId) {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            
-            // Close mobile menu if open
-            if (this.navMenu.classList.contains('rioch-mobile-active')) {
-                this.toggleMobileMenu();
-            }
-        }
-    }
-
-    setupMobileNavigation() {
+    initMobileMenu() {
         if (this.hamburger) {
             this.hamburger.addEventListener('click', () => {
                 this.toggleMobileMenu();
             });
         }
+        
+        // Dışarı tıklandığında menüyü kapat
+        document.addEventListener('click', (e) => {
+            if (!this.navbar.contains(e.target) && this.navMenu.classList.contains('active')) {
+                this.closeMobileMenu();
+            }
+        });
     }
 
     toggleMobileMenu() {
-        const spans = this.hamburger.querySelectorAll('span');
+        this.navMenu.classList.toggle('active');
+        this.hamburger.classList.toggle('active');
         
-        if (this.navMenu.classList.contains('rioch-mobile-active')) {
-            // Close menu
-            this.navMenu.classList.remove('rioch-mobile-active');
-            this.navMenu.style.display = 'none';
-            
-            // Reset hamburger
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
-        } else {
-            // Open menu
-            this.navMenu.classList.add('rioch-mobile-active');
-            this.navMenu.style.cssText = `
-                display: flex !important;
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(15, 20, 25, 0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                z-index: 999;
-                animation: riochSlideUp 0.3s ease-out;
-            `;
-            
-            // Animate hamburger
-            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-        }
+        // Hamburger animasyonu
+        const spans = this.hamburger.querySelectorAll('span');
+        spans.forEach((span, index) => {
+            span.style.transform = this.navMenu.classList.contains('active') 
+                ? `rotate(${index === 1 ? 45 : index === 2 ? -45 : 0}deg) translate(${index === 0 ? '5px, 5px' : index === 2 ? '-5px, -5px' : '0'})` 
+                : 'none';
+        });
     }
 
-    setupScrollBehavior() {
-        let lastScrollY = window.scrollY;
+    closeMobileMenu() {
+        this.navMenu.classList.remove('active');
+        this.hamburger.classList.remove('active');
+        
+        const spans = this.hamburger.querySelectorAll('span');
+        spans.forEach(span => {
+            span.style.transform = 'none';
+        });
+    }
 
+    initScrollBehavior() {
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
             
-            // Navbar hide/show on scroll
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Navbar hide/show
+            if (currentScrollY > this.lastScrollY && currentScrollY > 100) {
                 this.navbar.style.transform = 'translateY(-100%)';
             } else {
                 this.navbar.style.transform = 'translateY(0)';
             }
             
-            // Add background blur when scrolled
+            // Navbar background opacity
             if (currentScrollY > 50) {
-                this.navbar.style.background = 'rgba(15, 20, 25, 0.98)';
+                this.navbar.style.background = 'rgba(10, 10, 10, 0.95)';
+                this.navbar.style.backdropFilter = 'blur(20px)';
             } else {
-                this.navbar.style.background = 'rgba(15, 20, 25, 0.95)';
+                this.navbar.style.background = 'rgba(10, 10, 10, 0.8)';
+                this.navbar.style.backdropFilter = 'blur(10px)';
             }
             
-            lastScrollY = currentScrollY;
+            this.lastScrollY = currentScrollY;
         });
     }
 }
 
-// RIO CH Interactive Elements
+// ===== RIO CH INTERACTIVE ELEMENTS =====
 class RiochInteractiveElements {
     constructor() {
         this.init();
     }
 
     init() {
-        this.setupButtonInteractions();
-        this.setupFormValidation();
-        this.setupTooltips();
-        this.setupModalSystem();
+        this.initButtonInteractions();
+        this.initModalSystem();
+        this.initImageLightbox();
     }
 
-    setupButtonInteractions() {
+    initButtonInteractions() {
         // Download button
-        const downloadBtns = document.querySelectorAll('.rioch-btn-download, .rioch-btn-mega');
+        const downloadBtns = document.querySelectorAll('.rioch-btn-download, .rioch-btn-download-main');
         downloadBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.showDownloadMessage();
+                this.showMessage('Game download started! RIO CH Gaming Excellence.', 'success');
             });
         });
-
+        
         // Discord button
-        const discordBtns = document.querySelectorAll('.rioch-btn-discord, .rioch-social-discord');
+        const discordBtns = document.querySelectorAll('.rioch-btn-discord');
         discordBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.openDiscord();
+                this.showMessage('Redirecting to Discord server...', 'info');
+                setTimeout(() => {
+                    window.open('https://discord.gg/kuzenler-mt2', '_blank');
+                }, 1000);
             });
         });
-
-        // YouTube/Trailer button
-        const youtubeBtns = document.querySelectorAll('.rioch-btn-trailer, .rioch-social-youtube');
+        
+        // YouTube button
+        const youtubeBtns = document.querySelectorAll('.rioch-btn-trailer, .rioch-btn-youtube');
         youtubeBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                this.openYouTube();
+                this.showMessage('Opening game trailer...', 'info');
+                setTimeout(() => {
+                    window.open('https://youtube.com/kuzenler-mt2', '_blank');
+                }, 1000);
             });
         });
     }
 
-    showDownloadMessage() {
-        const message = document.createElement('div');
-        message.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #2ecc71, #27ae60);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            font-family: 'Orbitron', monospace;
-            font-weight: 600;
-            z-index: 10001;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            animation: riochSlideUp 0.3s ease-out;
-        `;
-        message.innerHTML = `
-            <h3>🎮 KUZENLER MT2 İndirme</h3>
-            <p>Oyun dosyaları hazırlanıyor...</p>
-            <p><small>RIO CH tarafından geliştirildi</small></p>
-        `;
-        document.body.appendChild(message);
-
-        setTimeout(() => {
-            message.style.opacity = '0';
-            setTimeout(() => message.remove(), 300);
-        }, 3000);
+    initModalSystem() {
+        // Protection modal close
+        window.riochCloseModal = () => {
+            const modal = document.getElementById('rioch-protection-modal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        };
     }
 
-    openDiscord() {
-        const message = document.createElement('div');
-        message.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #7289da, #5865f2);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            font-family: 'Orbitron', monospace;
-            font-weight: 600;
-            z-index: 10001;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            animation: riochSlideUp 0.3s ease-out;
-        `;
-        message.innerHTML = `
-            <h3>📢 KUZENLER MT2 Discord</h3>
-            <p>Discord sunucumuz yakında aktif olacak!</p>
-            <p><small>RIO CH Community</small></p>
-        `;
-        document.body.appendChild(message);
-
-        setTimeout(() => {
-            message.style.opacity = '0';
-            setTimeout(() => message.remove(), 300);
-        }, 3000);
-    }
-
-    openYouTube() {
-        const message = document.createElement('div');
-        message.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            font-family: 'Orbitron', monospace;
-            font-weight: 600;
-            z-index: 10001;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            animation: riochSlideUp 0.3s ease-out;
-        `;
-        message.innerHTML = `
-            <h3>🎬 KUZENLER MT2 Trailer</h3>
-            <p>Oyun videoları çok yakında!</p>
-            <p><small>RIO CH Productions</small></p>
-        `;
-        document.body.appendChild(message);
-
-        setTimeout(() => {
-            message.style.opacity = '0';
-            setTimeout(() => message.remove(), 300);
-        }, 3000);
-    }
-
-    setupFormValidation() {
-        // Future form implementations
-    }
-
-    setupTooltips() {
-        // Add tooltips to interactive elements
-        const tooltipElements = document.querySelectorAll('[data-tooltip]');
-        tooltipElements.forEach(element => {
-            this.addTooltip(element);
+    initImageLightbox() {
+        const galleryImages = document.querySelectorAll('.rioch-gallery-image');
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                this.openLightbox(img.src, img.alt);
+            });
         });
     }
 
-    addTooltip(element) {
-        const tooltipText = element.getAttribute('data-tooltip');
+    openLightbox(src, alt) {
+        const lightbox = document.createElement('div');
+        lightbox.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+            cursor: pointer;
+        `;
         
-        element.addEventListener('mouseenter', (e) => {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'rioch-tooltip';
-            tooltip.textContent = tooltipText;
-            tooltip.style.cssText = `
-                position: absolute;
-                background: rgba(0, 0, 0, 0.9);
-                color: white;
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-                font-size: 0.8rem;
-                z-index: 10000;
-                pointer-events: none;
-                white-space: nowrap;
-            `;
-            document.body.appendChild(tooltip);
-            
-            const rect = element.getBoundingClientRect();
-            tooltip.style.left = `${rect.left + rect.width / 2 - tooltip.offsetWidth / 2}px`;
-            tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-        });
-
-        element.addEventListener('mouseleave', () => {
-            const tooltip = document.querySelector('.rioch-tooltip');
-            if (tooltip) tooltip.remove();
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alt;
+        img.style.cssText = `
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(233, 69, 96, 0.5);
+        `;
+        
+        lightbox.appendChild(img);
+        document.body.appendChild(lightbox);
+        
+        lightbox.addEventListener('click', () => {
+            document.body.removeChild(lightbox);
         });
     }
 
-    setupModalSystem() {
-        // Modal system is handled by protection system
+    showMessage(text, type = 'info') {
+        const message = document.createElement('div');
+        const colors = {
+            success: '#2ecc71',
+            error: '#e74c3c',
+            info: '#3498db',
+            warning: '#f39c12'
+        };
+        
+        message.textContent = text;
+        message.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: ${colors[type]};
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            z-index: 10002;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        `;
+        
+        document.body.appendChild(message);
+        
+        setTimeout(() => {
+            message.style.transform = 'translateX(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            message.style.transform = 'translateX(400px)';
+            setTimeout(() => {
+                if (message.parentNode) {
+                    message.parentNode.removeChild(message);
+                }
+            }, 300);
+        }, 3000);
     }
 }
 
-// RIO CH Performance Monitor
+// ===== RIO CH PERFORMANCE MONITOR =====
 class RiochPerformanceMonitor {
     constructor() {
-        this.metrics = {
-            loadTime: 0,
-            renderTime: 0,
-            memoryUsage: 0
-        };
+        this.startTime = performance.now();
+        this.frameCount = 0;
+        this.lastTime = this.startTime;
+        this.fps = 0;
         this.init();
     }
 
     init() {
-        this.measureLoadTime();
-        this.monitorPerformance();
-        this.optimizeAnimations();
+        this.monitorLoadTime();
+        this.monitorFPS();
+        this.optimizeForLowEndDevices();
     }
 
-    measureLoadTime() {
+    monitorLoadTime() {
         window.addEventListener('load', () => {
-            const loadTime = performance.now();
-            this.metrics.loadTime = loadTime;
-            console.log(`🚀 RIO CH Performance: ${Math.round(loadTime)}ms load time`);
+            const loadTime = performance.now() - this.startTime;
+            console.log(`🚀 RIO CH - Page loaded in ${Math.round(loadTime)}ms`);
+            
+            if (loadTime > 3000) {
+                console.warn('⚠️ RIO CH - Slow loading detected, optimizing...');
+                this.optimizePerformance();
+            }
         });
     }
 
-    monitorPerformance() {
-        // Monitor FPS and performance
-        let frames = 0;
-        let lastTime = performance.now();
-
-        const countFPS = () => {
-            frames++;
+    monitorFPS() {
+        const calculateFPS = () => {
+            this.frameCount++;
             const currentTime = performance.now();
             
-            if (currentTime >= lastTime + 1000) {
-                const fps = Math.round((frames * 1000) / (currentTime - lastTime));
-                console.log(`⚡ RIO CH FPS: ${fps}`);
-                frames = 0;
-                lastTime = currentTime;
+            if (currentTime > this.lastTime + 1000) {
+                this.fps = Math.round((this.frameCount * 1000) / (currentTime - this.lastTime));
+                this.frameCount = 0;
+                this.lastTime = currentTime;
+                
+                if (this.fps < 30) {
+                    this.optimizePerformance();
+                }
             }
             
-            requestAnimationFrame(countFPS);
+            requestAnimationFrame(calculateFPS);
         };
-
-        requestAnimationFrame(countFPS);
+        
+        requestAnimationFrame(calculateFPS);
     }
 
-    optimizeAnimations() {
-        // Reduce animations on low-performance devices
-        if (navigator.hardwareConcurrency < 4) {
-            document.body.classList.add('rioch-low-performance');
-            console.log('🔧 RIO CH: Optimizing for low-performance device');
+    optimizeForLowEndDevices() {
+        const isLowEnd = navigator.hardwareConcurrency <= 2 || 
+                        navigator.deviceMemory <= 2 ||
+                        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        
+        if (isLowEnd) {
+            document.documentElement.style.setProperty('--rioch-animation-duration', '0.2s');
+            
+            // Particle sayısını azalt
+            if (riochAnimations) {
+                riochAnimations.maxParticles = 10;
+            }
         }
+    }
+
+    optimizePerformance() {
+        // Gereksiz animasyonları durdur
+        const heavyAnimations = document.querySelectorAll('.rioch-heavy-animation');
+        heavyAnimations.forEach(el => {
+            el.style.animation = 'none';
+        });
+        
+        console.log('🔧 RIO CH - Performance optimizations applied');
     }
 }
 
-// RIO CH System Initialization
+// ===== RIO CH MAIN SYSTEM =====
 class RiochGameSystem {
     constructor() {
-        this.systems = {};
+        this.version = '2.4.3';
+        this.developer = 'RIO CH';
         this.initialized = false;
         this.init();
     }
 
     init() {
-        console.log('🎯 RIO CH: Initializing Gaming Systems...');
+        if (this.initialized) return;
+        
+        console.log(`🎮 KUZENLER MT2 v${this.version} - Powered by ${this.developer}`);
+        console.log('🛡️ Advanced security systems active');
+        console.log('🚀 Professional gaming experience loading...');
+        
+        // Global error handling
+        window.addEventListener('error', this.handleError.bind(this));
+        window.addEventListener('unhandledrejection', this.handleError.bind(this));
         
         // Initialize all systems
-        this.systems.security = new RiochSecuritySystem();
-        this.systems.loading = new RiochLoadingSystem();
-        this.systems.animation = new RiochAnimationController();
-        this.systems.navigation = new RiochNavigationController();
-        this.systems.interactive = new RiochInteractiveElements();
-        this.systems.performance = new RiochPerformanceMonitor();
+        this.initializeSystems();
+        this.registerGlobalFunctions();
+        this.performIntegrityCheck();
         
-        this.setupGlobalEvents();
-        this.markAsInitialized();
+        this.initialized = true;
+        console.log('✅ RIO CH Gaming System fully initialized');
     }
 
-    setupGlobalEvents() {
-        // Global error handling
-        window.addEventListener('error', (e) => {
-            console.log('🛡️ RIO CH: Error intercepted and handled');
-        });
+    initializeSystems() {
+        // Initialize systems in correct order
+        window.riochSecurity = new RiochSecuritySystem();
+        window.riochLoading = new RiochLoadingSystem();
+        window.riochAnimations = new RiochAnimationController();
+        window.riochNavigation = new RiochNavigationController();
+        window.riochInteractive = new RiochInteractiveElements();
+        window.riochPerformance = new RiochPerformanceMonitor();
+    }
 
-        // Prevent console access
-        Object.defineProperty(window, 'console', {
-            get: function() {
-                return {
-                    log: () => console.log('🔒 RIO CH: Console access restricted'),
-                    warn: () => {},
-                    error: () => {},
-                    info: () => {},
-                    debug: () => {}
+    registerGlobalFunctions() {
+        // Global utility functions
+        window.riochUtils = {
+            formatNumber: (num) => num.toLocaleString(),
+            createId: () => Math.random().toString(36).substr(2, 9),
+            debounce: (func, wait) => {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
                 };
             }
-        });
-
-        // RIO CH integrity check
-        setInterval(() => {
-            if (!document.querySelector('.rioch-dev-watermark')) {
-                console.error('🚨 RIO CH: System integrity violation!');
-                location.reload();
-            }
-        }, 30000);
+        };
     }
 
-    markAsInitialized() {
-        this.initialized = true;
-        console.log('✅ RIO CH: All systems initialized successfully!');
-        console.log('🏆 KUZENLER MT2 ready - RIO CH Excellence Delivered!');
+    performIntegrityCheck() {
+        // Check if critical elements exist
+        const criticalElements = [
+            '.rioch-navbar',
+            '.rioch-hero',
+            '.rioch-features',
+            '.rioch-footer'
+        ];
         
-        // Final protection layer
-        setTimeout(() => {
-            delete window.console;
-            console = undefined;
-        }, 5000);
+        let missingElements = [];
+        criticalElements.forEach(selector => {
+            if (!document.querySelector(selector)) {
+                missingElements.push(selector);
+            }
+        });
+        
+        if (missingElements.length > 0) {
+            console.warn('⚠️ RIO CH - Missing critical elements:', missingElements);
+        } else {
+            console.log('✅ RIO CH - All critical elements present');
+        }
+    }
+
+    handleError(event) {
+        console.error('🚨 RIO CH - System error:', event.error || event.reason);
+        
+        // Show user-friendly error message
+        if (window.riochInteractive) {
+            riochInteractive.showMessage('A system error occurred. RIO CH is working to fix it.', 'error');
+        }
     }
 }
 
-// RIO CH Auto-initialization
+// ===== RIO CH CSS ANIMATIONS =====
+const riochCSS = `
+@keyframes riochButtonParticle {
+    0% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(0) translateY(-50px); }
+}
+
+@keyframes riochRipple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes riochFloatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes riochFadeOut {
+    0% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+    100% { opacity: 0; transform: scale(0.8); }
+}
+`;
+
+// CSS'i ekle
+const styleSheet = document.createElement('style');
+styleSheet.textContent = riochCSS;
+document.head.appendChild(styleSheet);
+
+// ===== RIO CH SYSTEM AUTO-START =====
 document.addEventListener('DOMContentLoaded', () => {
-    // RIO CH signature verification
-    if (document.title.includes('KUZENLER MT2') && document.title.includes('RIO CH')) {
-        window.riochGameSystem = new RiochGameSystem();
-    } else {
-        console.error('🚨 RIO CH: Unauthorized modification detected!');
-    }
+    // Small delay to ensure all DOM elements are ready
+    setTimeout(() => {
+        window.riochSystem = new RiochGameSystem();
+    }, 100);
 });
 
-// RIO CH Final Protection
-window.addEventListener('beforeunload', () => {
-    console.log('👋 RIO CH: Thanks for visiting KUZENLER MT2!');
-});
+// ===== RIO CH DEVELOPER SIGNATURE =====
+console.log(`
+%c🎮 KUZENLER MT2 - Professional Gaming Experience
+%c🚀 Crafted with Excellence by RIO CH
+%c⚡ Advanced JavaScript Gaming System v2.4.3
+%c🛡️ Professional Security & Optimization
+%c💎 Premium Metin2 Private Server Experience
 
-// RIO CH Anti-tampering
-Object.freeze(RiochSecuritySystem);
-Object.freeze(RiochLoadingSystem);
-Object.freeze(RiochAnimationController);
-Object.freeze(RiochNavigationController);
-Object.freeze(RiochInteractiveElements);
-Object.freeze(RiochPerformanceMonitor);
-Object.freeze(RiochGameSystem);
+%c© 2024 RIO CH - All Rights Reserved
+%cProfessional Development • Advanced Gaming Technology
+`, 
+'color: #e94560; font-size: 16px; font-weight: bold;',
+'color: #ffd700; font-size: 14px; font-weight: bold;',
+'color: #3498db; font-size: 12px;',
+'color: #2ecc71; font-size: 12px;',
+'color: #9b59b6; font-size: 12px;',
+'color: #e74c3c; font-size: 10px; font-weight: bold;',
+'color: #95a5a6; font-size: 10px;'
+);
 
-/*
- * RIO CH GAMING EXCELLENCE - FINAL PROTECTION LAYER
+/**
+ * RIO CH GAMING EXCELLENCE - PROFESSIONAL JAVASCRIPT
  * 
- * This JavaScript is the intellectual property of RIO CH
- * Any unauthorized copying, modification, or distribution is strictly prohibited
- * © 2024 RIO CH - All Rights Reserved
+ * This script is the intellectual property of RIO CH
+ * Crafted with Excellence, Passion and Innovation
+ * Professional Metin2 Gaming Experience
  * 
- * 🛡️ Protected by RIO CH Advanced Security Systems
- * ⚡ Optimized for Maximum Gaming Performance  
- * 🎯 Crafted with Excellence, Passion and Innovation
- * 🎮 KUZENLER MT2 - The Ultimate Metin2 Experience
- * 🚀 Powered by RIO CH Technology
+ * Developer: RIO CH
+ * Year: 2024
+ * Version: 2.4.3
+ * 
+ * All Rights Reserved © RIO CH
  * 
  * Features Implemented:
- * ✅ Advanced Code Protection & Anti-Debugging
- * ✅ Dynamic Battle Animations & Particle Systems
- * ✅ Responsive Mobile Navigation
- * ✅ Interactive UI/UX Elements
+ * ✅ Advanced Security System (Anti-DevTools, Anti-Copy)
+ * ✅ Professional Loading System with Progress
+ * ✅ Advanced Animation Controller
+ * ✅ Smooth Navigation System
+ * ✅ Interactive Elements & Effects
  * ✅ Performance Monitoring & Optimization
- * ✅ Security System & Watermarking
- * ✅ Loading System with Progress Tracking
- * ✅ Smooth Scroll & Section Navigation
- * ✅ Counter Animations & Visual Effects
- * ✅ Professional Gaming Aesthetics
+ * ✅ Error Handling & Debugging
+ * ✅ Mobile Responsive Interactions
+ * ✅ Battle Scene Animations
+ * ✅ Real-time Statistics & Counters
  * 
  * 🔥 DEVELOPED WITH PASSION BY RIO CH 🔥
  */

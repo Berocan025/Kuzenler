@@ -1,28 +1,29 @@
 /*
- * KUZENLER MT2 - Metin2 Private Server Website
+ * KUZENLER MT2 - Professional Metin2 Private Server
  * Developed with Excellence by RIO CH
  * All Rights Reserved © 2024 RIO CH
- * Professional Metin2 Gaming Experience
+ * Professional Gaming Experience CSS
  */
 
-/* ===== RIO CH BASE VARIABLES ===== */
+/* ===== RIO CH VARIABLES ===== */
 :root {
-    /* RIO CH Color Palette */
-    --rioch-primary: linear-gradient(135deg, #ff6b35, #f7931e);
-    --rioch-secondary: linear-gradient(135deg, #667eea, #764ba2);
-    --rioch-gold: linear-gradient(135deg, #ffd700, #ffb347);
-    --rioch-dragon: linear-gradient(135deg, #e74c3c, #c0392b);
-    --rioch-dark: #0f1419;
-    --rioch-darker: #0a0e13;
-    --rioch-accent: #ff6b35;
-    --rioch-success: #2ecc71;
-    --rioch-yang: #ffd700;
-    --rioch-white: #ffffff;
+    /* RIO CH Dark Color Palette */
+    --rioch-primary: linear-gradient(135deg, #1a1a2e, #16213e);
+    --rioch-secondary: linear-gradient(135deg, #0f3460, #16537e);
+    --rioch-accent: #e94560;
+    --rioch-gold: #ffd700;
+    --rioch-dark: #0a0a0a;
+    --rioch-darker: #050505;
+    --rioch-surface: #1a1a2e;
+    --rioch-surface-light: #2d2d44;
+    --rioch-text: #ffffff;
+    --rioch-text-muted: #b8b8b8;
+    --rioch-border: rgba(233, 69, 96, 0.3);
     
     /* RIO CH Effects */
-    --rioch-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    --rioch-glow: 0 0 30px rgba(255, 107, 53, 0.6);
-    --rioch-glow-intense: 0 0 50px rgba(255, 107, 53, 0.8);
+    --rioch-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    --rioch-glow: 0 0 30px rgba(233, 69, 96, 0.5);
+    --rioch-glow-intense: 0 0 50px rgba(233, 69, 96, 0.8);
     
     /* RIO CH Typography */
     --rioch-font-primary: 'Exo 2', sans-serif;
@@ -30,7 +31,7 @@
     --rioch-font-tech: 'Orbitron', monospace;
 }
 
-/* ===== RIO CH GLOBAL RESET ===== */
+/* ===== RIO CH RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -50,7 +51,7 @@ html {
 body {
     font-family: var(--rioch-font-primary);
     background: var(--rioch-dark);
-    color: var(--rioch-white);
+    color: var(--rioch-text);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
@@ -68,7 +69,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 99999;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.8s ease;
 }
 
 .rioch-loading-content {
@@ -77,78 +78,112 @@ body {
     z-index: 2;
 }
 
-.rioch-metin-logo {
+.rioch-loading-logo {
     margin-bottom: 3rem;
 }
 
-.rioch-logo-dragon {
-    width: 120px;
-    height: 120px;
+.rioch-dragon-emblem {
+    width: 150px;
+    height: 150px;
     margin: 0 auto 2rem;
-    background: var(--rioch-dragon);
+    background: var(--rioch-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 4rem;
-    animation: riochDragonPulse 2s infinite;
+    border: 3px solid var(--rioch-accent);
     position: relative;
+    animation: riochDragonPulse 2s infinite;
 }
 
-.rioch-logo-dragon::before {
-    content: '🐉';
-    animation: riochDragonRotate 3s linear infinite;
+.rioch-dragon-emblem i {
+    font-size: 4rem;
+    color: var(--rioch-gold);
+    animation: riochDragonRotate 4s linear infinite;
 }
 
-.rioch-metin-logo h1 {
+.rioch-loading-logo h1 {
     font-family: var(--rioch-font-display);
-    font-size: 3rem;
-    background: var(--rioch-gold);
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
 }
 
-.rioch-metin-logo p {
-    color: var(--rioch-accent);
+.rioch-loading-subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--rioch-text-muted);
     font-weight: 600;
-    font-size: 1.2rem;
+}
+
+.rioch-loading-progress-container {
+    margin: 2rem 0;
+    position: relative;
 }
 
 .rioch-loading-bar {
-    width: 300px;
+    width: 400px;
     height: 8px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    margin: 2rem auto;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--rioch-border);
 }
 
 .rioch-loading-progress {
     height: 100%;
-    background: var(--rioch-primary);
+    background: linear-gradient(90deg, var(--rioch-accent), var(--rioch-gold));
     width: 0%;
-    animation: riochLoadProgress 3s ease-in-out infinite;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 20px rgba(233, 69, 96, 0.6);
 }
 
-.rioch-loading-text {
-    color: var(--rioch-white);
+.rioch-loading-percentage {
+    color: var(--rioch-gold);
+    font-weight: 700;
+    font-family: var(--rioch-font-tech);
+}
+
+.rioch-loading-status {
+    color: var(--rioch-text-muted);
     font-size: 1.1rem;
-    animation: riochTextBlink 1.5s infinite;
+    animation: riochTextBlink 2s infinite;
 }
 
-.rioch-loading-particles {
+.rioch-loading-effects {
     position: absolute;
     width: 100%;
     height: 100%;
     pointer-events: none;
 }
 
+.rioch-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--rioch-accent);
+    border-radius: 50%;
+    animation: riochParticleFloat 3s linear infinite;
+}
+
+.rioch-particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.rioch-particle:nth-child(2) { top: 40%; right: 30%; animation-delay: -1s; }
+.rioch-particle:nth-child(3) { bottom: 30%; left: 25%; animation-delay: -2s; }
+.rioch-particle:nth-child(4) { bottom: 20%; right: 20%; animation-delay: -1.5s; }
+.rioch-particle:nth-child(5) { top: 60%; left: 50%; animation-delay: -0.5s; }
+
 /* ===== RIO CH ANIMATIONS ===== */
 @keyframes riochDragonPulse {
     0%, 100% { transform: scale(1); box-shadow: var(--rioch-glow); }
-    50% { transform: scale(1.1); box-shadow: var(--rioch-glow-intense); }
+    50% { transform: scale(1.05); box-shadow: var(--rioch-glow-intense); }
 }
 
 @keyframes riochDragonRotate {
@@ -156,25 +191,15 @@ body {
     to { transform: rotate(360deg); }
 }
 
-@keyframes riochLoadProgress {
-    0% { width: 0%; }
-    70% { width: 100%; }
-    100% { width: 100%; }
-}
-
 @keyframes riochTextBlink {
     0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.5; }
+    51%, 100% { opacity: 0.6; }
 }
 
-@keyframes riochFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-}
-
-@keyframes riochGlow {
-    0%, 100% { box-shadow: var(--rioch-glow); }
-    50% { box-shadow: var(--rioch-glow-intense); }
+@keyframes riochParticleFloat {
+    0% { opacity: 0; transform: translateY(0px) scale(0); }
+    50% { opacity: 1; transform: translateY(-50px) scale(1); }
+    100% { opacity: 0; transform: translateY(-100px) scale(0); }
 }
 
 @keyframes riochSlideUp {
@@ -182,33 +207,37 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes riochBattleEffect {
-    0% { opacity: 0; transform: scale(0.5) rotate(0deg); }
-    50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
-    100% { opacity: 0; transform: scale(1.5) rotate(360deg); }
+@keyframes riochFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@keyframes riochSwordSlash {
-    0% { transform: translateX(-100px) rotate(-45deg); opacity: 0; }
-    50% { transform: translateX(0px) rotate(0deg); opacity: 1; }
-    100% { transform: translateX(100px) rotate(45deg); opacity: 0; }
+@keyframes riochFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
-@keyframes riochFireball {
-    0% { transform: translateX(-50px) scale(0.5); opacity: 0; }
-    50% { transform: translateX(25px) scale(1); opacity: 1; }
-    100% { transform: translateX(100px) scale(1.5); opacity: 0; }
+@keyframes riochBattleMove {
+    0%, 100% { transform: translateX(0px) translateY(0px); }
+    25% { transform: translateX(10px) translateY(-5px); }
+    50% { transform: translateX(-5px) translateY(5px); }
+    75% { transform: translateX(5px) translateY(-10px); }
 }
 
-@keyframes riochLightning {
-    0%, 10%, 20% { opacity: 0; }
-    5%, 15% { opacity: 1; }
-    25%, 100% { opacity: 0; }
+@keyframes riochWeaponGlow {
+    0%, 100% { box-shadow: 0 0 10px var(--rioch-gold); }
+    50% { box-shadow: 0 0 30px var(--rioch-gold); }
 }
 
 @keyframes riochDamageFloat {
     0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-100px) scale(0.8); opacity: 0; }
+    100% { transform: translateY(-150px) scale(0.8); opacity: 0; }
+}
+
+@keyframes riochExplosion {
+    0% { transform: scale(0); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(2); opacity: 0; }
 }
 
 /* ===== RIO CH NAVIGATION ===== */
@@ -216,11 +245,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 20, 25, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(20px);
     z-index: 1000;
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+    border-bottom: 1px solid var(--rioch-border);
+    padding: 0.5rem 0;
 }
 
 .rioch-nav-container {
@@ -229,7 +259,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
 }
 
 .rioch-logo {
@@ -238,46 +268,69 @@ body {
     gap: 1rem;
 }
 
-.rioch-logo-icon {
-    font-size: 2.5rem;
+.rioch-logo-emblem {
+    width: 50px;
+    height: 50px;
+    background: var(--rioch-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--rioch-accent);
     animation: riochFloat 3s ease-in-out infinite;
 }
 
-.rioch-logo-text {
+.rioch-logo-emblem i {
+    color: var(--rioch-gold);
+    font-size: 1.5rem;
+}
+
+.rioch-logo-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.rioch-logo-title {
     font-family: var(--rioch-font-display);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    background: var(--rioch-gold);
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1;
 }
 
 .rioch-logo-subtitle {
     font-family: var(--rioch-font-tech);
-    font-size: 0.9rem;
-    color: var(--rioch-accent);
+    font-size: 0.7rem;
+    color: var(--rioch-text-muted);
     font-weight: 600;
-    margin-left: -1rem;
-    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .rioch-nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 0.5rem;
     align-items: center;
 }
 
 .rioch-nav-menu a {
-    color: var(--rioch-white);
+    color: var(--rioch-text);
     text-decoration: none;
     padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
     font-weight: 500;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid transparent;
 }
 
 .rioch-nav-menu a::before {
@@ -287,10 +340,10 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: var(--rioch-primary);
+    background: var(--rioch-accent);
     transition: all 0.3s ease;
     z-index: -1;
-    border-radius: 25px;
+    border-radius: 8px;
 }
 
 .rioch-nav-menu a:hover::before {
@@ -299,6 +352,34 @@ body {
 
 .rioch-nav-menu a:hover {
     color: white;
+    transform: translateY(-2px);
+    border-color: var(--rioch-accent);
+    box-shadow: var(--rioch-glow);
+}
+
+.rioch-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rioch-btn-register {
+    background: var(--rioch-accent);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--rioch-font-primary);
+}
+
+.rioch-btn-register:hover {
+    background: #d63851;
     transform: translateY(-2px);
     box-shadow: var(--rioch-glow);
 }
@@ -334,165 +415,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--rioch-darker), var(--rioch-dark));
+    z-index: 0;
 }
 
-.rioch-battle-scene {
-    position: absolute;
+.rioch-bg-image {
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    opacity: 0.3;
-}
-
-/* RIO CH Battle Characters */
-.rioch-warrior, .rioch-ninja, .rioch-mage {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    animation: riochFloat 4s ease-in-out infinite;
-}
-
-.rioch-warrior {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    top: 20%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.rioch-ninja {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-    top: 60%;
-    left: 20%;
-    animation-delay: -1s;
-}
-
-.rioch-mage {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    top: 40%;
-    right: 25%;
-    animation-delay: -2s;
-}
-
-.rioch-sword-trail {
-    position: absolute;
-    width: 200px;
-    height: 4px;
-    background: var(--rioch-gold);
-    top: 50%;
-    left: -100px;
-    animation: riochSwordSlash 3s infinite;
-    box-shadow: var(--rioch-glow);
-}
-
-.rioch-fireball {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background: radial-gradient(circle, #ff6b35, #e74c3c);
-    border-radius: 50%;
-    top: 50%;
-    left: -50px;
-    animation: riochFireball 2s infinite;
-    box-shadow: 0 0 20px #ff6b35;
-}
-
-.rioch-lightning-bolt {
-    position: absolute;
-    width: 4px;
-    height: 100px;
-    background: linear-gradient(to bottom, #fff, #3498db);
-    top: -50px;
-    left: 50%;
-    animation: riochLightning 4s infinite;
-    box-shadow: 0 0 15px #3498db;
-}
-
-.rioch-metin-stone {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, #34495e, #2c3e50);
-    top: 30%;
-    right: 15%;
-    border-radius: 10px;
-    animation: riochFloat 5s ease-in-out infinite;
-}
-
-.rioch-metin-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid var(--rioch-yang);
-    border-radius: 10px;
-    animation: riochGlow 2s infinite;
-}
-
-.rioch-dragon-boss {
-    position: absolute;
-    width: 150px;
-    height: 100px;
-    background: var(--rioch-dragon);
-    top: 70%;
-    right: 30%;
-    border-radius: 50px;
-    animation: riochFloat 6s ease-in-out infinite;
-}
-
-.rioch-damage-display {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.rioch-dmg, .rioch-heal, .rioch-miss, .rioch-block {
-    position: absolute;
-    font-weight: bold;
-    font-family: var(--rioch-font-tech);
-    animation: riochDamageFloat 2s infinite;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.rioch-dmg.rioch-critical {
-    color: #ff4757;
-    font-size: 2rem;
-    top: 25%;
-    left: 30%;
-    animation-delay: 0s;
-}
-
-.rioch-dmg.rioch-normal {
-    color: #ffa502;
-    font-size: 1.5rem;
-    top: 45%;
-    right: 20%;
-    animation-delay: -0.5s;
-}
-
-.rioch-heal {
-    color: #2ed573;
-    font-size: 1.3rem;
-    top: 65%;
-    left: 40%;
-    animation-delay: -1s;
-}
-
-.rioch-miss {
-    color: #747d8c;
-    font-size: 1.2rem;
-    top: 35%;
-    right: 35%;
-    animation-delay: -1.5s;
-}
-
-.rioch-block {
-    color: #5352ed;
-    font-size: 1.2rem;
-    top: 55%;
-    left: 60%;
-    animation-delay: -2s;
+    object-fit: cover;
+    filter: brightness(0.3) contrast(1.2);
 }
 
 .rioch-hero-overlay {
@@ -502,70 +432,261 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, 
-        rgba(255, 107, 53, 0.1), 
-        rgba(231, 76, 60, 0.1),
-        rgba(52, 152, 219, 0.05)
+        rgba(26, 26, 46, 0.8), 
+        rgba(233, 69, 96, 0.2),
+        rgba(10, 10, 10, 0.9)
     );
     z-index: 1;
 }
 
+.rioch-battle-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Battle Characters */
+.rioch-warrior, .rioch-ninja, .rioch-sura, .rioch-shaman {
+    position: absolute;
+    animation: riochBattleMove 4s ease-in-out infinite;
+}
+
+.rioch-warrior {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.rioch-ninja {
+    top: 60%;
+    left: 10%;
+    animation-delay: -1s;
+}
+
+.rioch-sura {
+    top: 40%;
+    right: 20%;
+    animation-delay: -2s;
+}
+
+.rioch-shaman {
+    bottom: 30%;
+    right: 15%;
+    animation-delay: -3s;
+}
+
+.rioch-char-sprite {
+    width: 80px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.5));
+}
+
+.rioch-weapon-trail,
+.rioch-stealth-effect,
+.rioch-dark-magic,
+.rioch-healing-light {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background: var(--rioch-accent);
+    border-radius: 50px;
+    top: 50%;
+    left: -50px;
+    animation: riochWeaponGlow 2s infinite;
+    opacity: 0.7;
+}
+
+.rioch-stealth-effect {
+    background: linear-gradient(90deg, transparent, rgba(155, 89, 182, 0.8), transparent);
+}
+
+.rioch-dark-magic {
+    background: linear-gradient(90deg, transparent, rgba(76, 0, 153, 0.8), transparent);
+}
+
+.rioch-healing-light {
+    background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.8), transparent);
+}
+
+/* Monsters */
+.rioch-metin-stone, .rioch-boss-hydra {
+    position: absolute;
+}
+
+.rioch-metin-stone {
+    top: 30%;
+    right: 10%;
+}
+
+.rioch-boss-hydra {
+    bottom: 20%;
+    left: 30%;
+}
+
+.rioch-monster-sprite {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 0, 0.6));
+}
+
+.rioch-metin-aura,
+.rioch-breath-attack {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px solid var(--rioch-gold);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: riochDragonPulse 3s infinite;
+}
+
+/* Battle Effects */
+.rioch-battle-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.rioch-explosion {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, var(--rioch-accent), transparent);
+    border-radius: 50%;
+    animation: riochExplosion 2s infinite;
+}
+
+.rioch-explosion-1 {
+    top: 25%;
+    left: 40%;
+    animation-delay: 0s;
+}
+
+.rioch-explosion-2 {
+    bottom: 35%;
+    right: 30%;
+    animation-delay: -1s;
+}
+
+.rioch-lightning-strike {
+    position: absolute;
+    top: 45%;
+    left: 60%;
+    width: 4px;
+    height: 100px;
+    background: linear-gradient(to bottom, #fff, var(--rioch-accent));
+    animation: riochTextBlink 3s infinite;
+    box-shadow: 0 0 20px var(--rioch-accent);
+}
+
+.rioch-fire-blast {
+    position: absolute;
+    top: 55%;
+    right: 45%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ff6b35, transparent);
+    border-radius: 50%;
+    animation: riochExplosion 2.5s infinite;
+    animation-delay: -0.5s;
+}
+
+/* Damage Numbers */
+.rioch-damage-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.rioch-damage,
+.rioch-heal,
+.rioch-miss,
+.rioch-resist {
+    position: absolute;
+    font-weight: 900;
+    font-family: var(--rioch-font-tech);
+    animation: riochDamageFloat 3s infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+.rioch-damage.rioch-critical {
+    color: #ff4757;
+    font-size: 2.5rem;
+    top: 20%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.rioch-damage.rioch-normal {
+    color: #ffa502;
+    font-size: 1.8rem;
+    top: 50%;
+    right: 25%;
+    animation-delay: -1s;
+}
+
+.rioch-damage.rioch-poison {
+    color: #a55eea;
+    font-size: 1.5rem;
+    bottom: 40%;
+    left: 35%;
+    animation-delay: -2s;
+}
+
+.rioch-heal {
+    color: #2ed573;
+    font-size: 1.6rem;
+    top: 65%;
+    left: 50%;
+    animation-delay: -1.5s;
+}
+
+.rioch-miss {
+    color: #747d8c;
+    font-size: 1.4rem;
+    top: 35%;
+    right: 40%;
+    animation-delay: -2.5s;
+}
+
+.rioch-resist {
+    color: #5352ed;
+    font-size: 1.4rem;
+    bottom: 25%;
+    right: 35%;
+    animation-delay: -0.5s;
+}
+
 .rioch-hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
 }
 
-.rioch-floating-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.rioch-yang-coin, .rioch-sword-icon, .rioch-dragon-icon, 
-.rioch-gem-icon, .rioch-scroll-icon {
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0.6;
-    animation: riochFloat 4s ease-in-out infinite;
-}
-
-.rioch-yang-coin {
-    top: 15%;
-    left: 10%;
-    animation-delay: 0s;
-}
-
-.rioch-sword-icon {
-    top: 25%;
-    right: 10%;
-    animation-delay: -1s;
-}
-
-.rioch-dragon-icon {
-    bottom: 30%;
-    left: 8%;
-    animation-delay: -2s;
-}
-
-.rioch-gem-icon {
-    bottom: 20%;
-    right: 15%;
-    animation-delay: -3s;
-}
-
-.rioch-scroll-icon {
-    top: 60%;
-    left: 5%;
-    animation-delay: -1.5s;
-}
-
-.rioch-hero-main {
-    position: relative;
-    z-index: 3;
+.rioch-server-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid var(--rioch-accent);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--rioch-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
 }
 
 .rioch-hero-title {
@@ -575,75 +696,147 @@ body {
 .rioch-title-main {
     display: block;
     font-family: var(--rioch-font-display);
-    font-size: 4.5rem;
-    font-weight: 700;
-    background: var(--rioch-gold);
+    font-size: 5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
-    animation: riochGlow 3s infinite;
+    text-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+    line-height: 1;
 }
 
 .rioch-title-sub {
     display: block;
     font-size: 1.8rem;
-    color: var(--rioch-white);
+    color: var(--rioch-text-muted);
+    font-weight: 400;
     opacity: 0.9;
-    font-weight: 600;
 }
 
 .rioch-hero-description {
     margin-bottom: 3rem;
     opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .rioch-hero-description p {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
 }
 
-.rioch-server-status {
+.rioch-server-info {
+    margin-bottom: 3rem;
+}
+
+.rioch-server-stats {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
-.rioch-status-item {
+.rioch-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+}
+
+.rioch-stat-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--rioch-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.rioch-stat-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
 }
 
-.rioch-status-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--rioch-success);
-    animation: riochGlow 2s infinite;
+.rioch-stat-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--rioch-gold);
+    font-family: var(--rioch-font-tech);
+    line-height: 1;
 }
 
-.rioch-status-dot.rioch-online {
-    background: var(--rioch-success);
-    box-shadow: 0 0 10px var(--rioch-success);
+.rioch-stat-label {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.rioch-player-count, .rioch-cap {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--rioch-accent);
-}
-
-.rioch-hero-buttons {
+.rioch-server-rates {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
-    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.rioch-rate-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.rioch-rate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--rioch-glow);
+    border-color: var(--rioch-accent);
+}
+
+.rioch-rate-card i {
+    font-size: 2rem;
+    color: var(--rioch-accent);
+    margin-bottom: 0.5rem;
+}
+
+.rioch-rate-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--rioch-gold);
+    font-family: var(--rioch-font-tech);
+    margin-bottom: 0.5rem;
+}
+
+.rioch-rate-label {
+    color: var(--rioch-text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.rioch-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
@@ -651,7 +844,7 @@ body {
 .rioch-btn {
     padding: 1rem 2rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 12px;
     font-weight: 600;
     font-family: var(--rioch-font-primary);
     cursor: pointer;
@@ -663,21 +856,22 @@ body {
     display: flex;
     align-items: center;
     gap: 0.8rem;
+    letter-spacing: 0.5px;
 }
 
 .rioch-btn-primary {
-    background: var(--rioch-primary);
+    background: var(--rioch-accent);
     color: white;
     box-shadow: var(--rioch-shadow);
 }
 
-.rioch-btn-discord {
+.rioch-btn-secondary {
     background: linear-gradient(135deg, #7289da, #5865f2);
     color: white;
     box-shadow: var(--rioch-shadow);
 }
 
-.rioch-btn-trailer {
+.rioch-btn-tertiary {
     background: linear-gradient(135deg, #ff0000, #cc0000);
     color: white;
     box-shadow: var(--rioch-shadow);
@@ -685,10 +879,10 @@ body {
 
 .rioch-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-.rioch-btn-shine {
+.rioch-btn-glow {
     position: absolute;
     top: 0;
     left: -100%;
@@ -696,41 +890,11 @@ body {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: all 0.5s ease;
+    border-radius: 12px;
 }
 
-.rioch-btn:hover .rioch-btn-shine {
+.rioch-btn:hover .rioch-btn-glow {
     left: 100%;
-}
-
-.rioch-server-rates {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.rioch-rate-item {
-    text-align: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 107, 53, 0.3);
-    backdrop-filter: blur(10px);
-    min-width: 120px;
-}
-
-.rioch-rate-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--rioch-accent);
-    margin-bottom: 0.5rem;
-}
-
-.rioch-rate-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    text-transform: uppercase;
 }
 
 .rioch-scroll-indicator {
@@ -742,6 +906,7 @@ body {
     cursor: pointer;
     opacity: 0.7;
     transition: all 0.3s ease;
+    animation: riochFloat 3s ease-in-out infinite;
 }
 
 .rioch-scroll-indicator:hover {
@@ -749,17 +914,32 @@ body {
     transform: translateX(-50%) translateY(-5px);
 }
 
-.rioch-scroll-indicator i {
-    font-size: 2rem;
-    color: var(--rioch-accent);
+.rioch-scroll-mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid var(--rioch-accent);
+    border-radius: 15px;
+    margin: 0 auto 1rem;
+    position: relative;
+}
+
+.rioch-scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--rioch-accent);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
     animation: riochFloat 2s ease-in-out infinite;
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 .rioch-scroll-indicator span {
+    color: var(--rioch-text-muted);
     font-size: 0.9rem;
-    color: var(--rioch-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* ===== RIO CH SECTIONS ===== */
@@ -774,22 +954,38 @@ body {
     margin-bottom: 4rem;
 }
 
+.rioch-section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid var(--rioch-accent);
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--rioch-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
 .rioch-section-title {
     font-family: var(--rioch-font-display);
     font-size: 3.5rem;
     font-weight: 700;
-    background: var(--rioch-gold);
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
 }
 
 .rioch-section-subtitle {
     font-size: 1.2rem;
-    opacity: 0.8;
-    max-width: 600px;
+    color: var(--rioch-text-muted);
+    max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
 }
@@ -809,14 +1005,14 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 70%),
-        radial-gradient(circle at 75% 75%, rgba(231, 76, 60, 0.1) 0%, transparent 70%);
+        radial-gradient(circle at 25% 25%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .rioch-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     position: relative;
     z-index: 1;
@@ -825,126 +1021,201 @@ body {
 .rioch-feature-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
-    padding: 2.5rem;
-    text-align: center;
+    overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    border: 1px solid var(--rioch-border);
     backdrop-filter: blur(20px);
     position: relative;
-    overflow: hidden;
-}
-
-.rioch-feature-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 0.3s ease;
-    border-radius: 20px;
-}
-
-.rioch-yang-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 179, 71, 0.1));
-}
-
-.rioch-dragon-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
-}
-
-.rioch-pvp-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
-}
-
-.rioch-guild-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
-}
-
-.rioch-dungeon-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
-}
-
-.rioch-event-feature .rioch-feature-bg {
-    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));
 }
 
 .rioch-feature-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--rioch-glow);
-    border-color: rgba(255, 107, 53, 0.5);
+    border-color: var(--rioch-accent);
 }
 
-.rioch-feature-card:hover .rioch-feature-bg {
-    opacity: 1;
+.rioch-feature-media {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
 }
 
-.rioch-feature-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 2rem;
-    background: var(--rioch-primary);
-    border-radius: 50%;
+.rioch-feature-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+    filter: brightness(0.7);
+}
+
+.rioch-feature-card:hover .rioch-feature-image {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.rioch-feature-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.8), rgba(26, 26, 46, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    color: white;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.rioch-icon-glow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
     opacity: 0;
     transition: all 0.3s ease;
-    animation: riochGlow 2s infinite;
 }
 
-.rioch-feature-card:hover .rioch-feature-icon {
-    transform: scale(1.1);
-}
-
-.rioch-feature-card:hover .rioch-icon-glow {
+.rioch-feature-card:hover .rioch-feature-overlay {
     opacity: 1;
 }
 
-.rioch-feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--rioch-white);
-    font-weight: 600;
+.rioch-feature-overlay i {
+    font-size: 4rem;
+    color: white;
 }
 
-.rioch-feature-card p {
-    opacity: 0.8;
+.rioch-feature-content {
+    padding: 2rem;
+}
+
+.rioch-feature-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+}
+
+.rioch-feature-content p {
+    color: var(--rioch-text-muted);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-.rioch-feature-stats {
-    background: rgba(255, 107, 53, 0.1);
-    border-radius: 25px;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(255, 107, 53, 0.3);
-    font-weight: 600;
+.rioch-feature-list {
+    list-style: none;
+}
+
+.rioch-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--rioch-text-muted);
+}
+
+.rioch-feature-list i {
     color: var(--rioch-accent);
-    font-size: 0.9rem;
+    font-size: 1rem;
+}
+
+/* ===== RIO CH SCREENSHOTS SECTION ===== */
+.rioch-screenshots {
+    padding: 8rem 0;
+    background: var(--rioch-dark);
+}
+
+.rioch-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.rioch-gallery-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.rioch-gallery-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
+    transition: all 0.3s ease;
+    height: 300px;
+}
+
+.rioch-gallery-large {
+    height: 620px;
+}
+
+.rioch-gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--rioch-glow);
+    border-color: var(--rioch-accent);
+}
+
+.rioch-gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.rioch-gallery-item:hover .rioch-gallery-image {
+    transform: scale(1.1);
+}
+
+.rioch-gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.9), rgba(26, 26, 46, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.rioch-gallery-item:hover .rioch-gallery-overlay {
+    opacity: 1;
+}
+
+.rioch-gallery-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.rioch-gallery-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 700;
+}
+
+.rioch-gallery-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.rioch-btn-ghost {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.rioch-btn-ghost:hover {
+    background: var(--rioch-accent);
+    border-color: var(--rioch-accent);
 }
 
 /* ===== RIO CH CHARACTERS SECTION ===== */
 .rioch-characters {
     padding: 8rem 0;
-    background: var(--rioch-dark);
-    position: relative;
+    background: linear-gradient(135deg, var(--rioch-dark), var(--rioch-darker));
 }
 
 .rioch-characters-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -953,115 +1224,155 @@ body {
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    border: 1px solid var(--rioch-border);
     backdrop-filter: blur(20px);
     position: relative;
-}
-
-.rioch-char-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    opacity: 0.3;
-    transition: all 0.3s ease;
-}
-
-.rioch-warrior-bg {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.rioch-ninja-bg {
-    background: linear-gradient(135deg, #9b59b6, #8e44ad);
-}
-
-.rioch-mage-bg {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-}
-
-.rioch-archer-bg {
-    background: linear-gradient(135deg, #27ae60, #2ecc71);
-}
-
-.rioch-char-model {
-    height: 250px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.rioch-char-aura {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    opacity: 0.7;
-    animation: riochGlow 3s infinite;
-}
-
-.rioch-warrior-aura {
-    background: radial-gradient(circle, rgba(231, 76, 60, 0.3), transparent);
-    box-shadow: 0 0 50px rgba(231, 76, 60, 0.5);
-}
-
-.rioch-ninja-aura {
-    background: radial-gradient(circle, rgba(155, 89, 182, 0.3), transparent);
-    box-shadow: 0 0 50px rgba(155, 89, 182, 0.5);
-}
-
-.rioch-mage-aura {
-    background: radial-gradient(circle, rgba(52, 152, 219, 0.3), transparent);
-    box-shadow: 0 0 50px rgba(52, 152, 219, 0.5);
-}
-
-.rioch-archer-aura {
-    background: radial-gradient(circle, rgba(46, 204, 113, 0.3), transparent);
-    box-shadow: 0 0 50px rgba(46, 204, 113, 0.5);
+    height: 600px;
 }
 
 .rioch-character-card:hover {
     transform: translateY(-10px);
     box-shadow: var(--rioch-glow);
+    border-color: var(--rioch-accent);
 }
 
-.rioch-character-card:hover .rioch-char-bg {
-    opacity: 0.5;
+.rioch-char-bg {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.rioch-char-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.rioch-char-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(26, 26, 46, 0.9));
+}
+
+.rioch-char-model {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.rioch-char-sprite {
+    width: 120px;
+    height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(233, 69, 96, 0.8));
+    animation: riochFloat 4s ease-in-out infinite;
+}
+
+.rioch-char-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.rioch-weapon-glow,
+.rioch-battle-aura,
+.rioch-stealth-aura,
+.rioch-shadow-clone,
+.rioch-dark-magic,
+.rioch-enchant-blade,
+.rioch-healing-aura,
+.rioch-dragon-power {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--rioch-gold);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: riochDragonPulse 3s infinite;
+    opacity: 0.6;
+}
+
+.rioch-stealth-aura {
+    border-color: #9b59b6;
+}
+
+.rioch-dark-magic,
+.rioch-enchant-blade {
+    border-color: #4c0099;
+}
+
+.rioch-healing-aura,
+.rioch-dragon-power {
+    border-color: #2ecc71;
 }
 
 .rioch-char-info {
-    padding: 2rem;
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
 }
 
-.rioch-char-info h3 {
-    font-size: 1.5rem;
+.rioch-char-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     margin-bottom: 1rem;
-    background: var(--rioch-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 600;
 }
 
-.rioch-char-info p {
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+.rioch-char-header i {
+    color: var(--rioch-accent);
+    font-size: 1.5rem;
+}
+
+.rioch-char-header h3 {
+    font-size: 1.5rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+    margin: 0;
+}
+
+.rioch-char-type {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: auto;
+}
+
+.rioch-char-description {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
 }
 
 .rioch-char-skills {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
 }
 
 .rioch-skill {
-    background: rgba(255, 107, 53, 0.2);
-    border: 1px solid rgba(255, 107, 53, 0.4);
-    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid var(--rioch-accent);
+    border-radius: 12px;
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
     color: var(--rioch-accent);
@@ -1069,20 +1380,22 @@ body {
 }
 
 .rioch-char-stats {
-    space-y: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .rioch-stat {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.8rem;
+    gap: 1rem;
 }
 
-.rioch-stat span:first-child {
+.rioch-stat-label {
     font-size: 0.9rem;
     font-weight: 500;
     min-width: 60px;
+    color: var(--rioch-text-muted);
 }
 
 .rioch-stat-bar {
@@ -1090,157 +1403,225 @@ body {
     height: 8px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-    margin-left: 1rem;
     overflow: hidden;
     position: relative;
 }
 
 .rioch-stat-fill {
     height: 100%;
-    background: var(--rioch-primary);
+    background: linear-gradient(90deg, var(--rioch-accent), var(--rioch-gold));
     border-radius: 10px;
-    transition: width 1.5s ease;
+    transition: width 2s ease;
     position: relative;
+    width: 0%;
 }
 
-.rioch-stat-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: riochStatShine 2s infinite;
+.rioch-stat-value {
+    font-size: 0.8rem;
+    color: var(--rioch-gold);
+    font-weight: 700;
+    min-width: 40px;
 }
 
-@keyframes riochStatShine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-/* ===== RIO CH SERVER INFO SECTION ===== */
-.rioch-server-info {
+/* ===== RIO CH GUILD SECTION ===== */
+.rioch-guild {
     padding: 8rem 0;
-    background: linear-gradient(135deg, var(--rioch-dark), var(--rioch-darker));
+    background: var(--rioch-dark);
 }
 
-.rioch-server-grid {
+.rioch-guild-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.rioch-server-card {
+.rioch-guild-ranking h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+}
+
+.rioch-guild-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rioch-guild-item {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2.5rem;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    border: 1px solid var(--rioch-border);
+    border-radius: 15px;
+    padding: 1.5rem;
     backdrop-filter: blur(20px);
     transition: all 0.3s ease;
-}
-
-.rioch-server-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--rioch-glow);
-    border-color: rgba(255, 107, 53, 0.4);
-}
-
-.rioch-server-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-    background: var(--rioch-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 600;
-}
-
-.rioch-rates-list {
-    space-y: 1rem;
-}
-
-.rioch-rate {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-
-.rioch-rate-name {
-    font-weight: 500;
-}
-
-.rioch-rate-value {
-    color: var(--rioch-accent);
-    font-weight: 700;
-    font-size: 1.1rem;
-}
-
-.rioch-stats-list {
-    space-y: 1.5rem;
-}
-
-.rioch-server-stat {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
 }
 
-.rioch-server-stat i {
-    font-size: 2rem;
-    color: var(--rioch-accent);
-    width: 40px;
-    text-align: center;
+.rioch-guild-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--rioch-glow);
+    border-color: var(--rioch-accent);
 }
 
-.rioch-stat-number {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--rioch-accent);
+.rioch-rank-1 {
+    border-color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
-.rioch-stat-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
+.rioch-rank-2 {
+    border-color: #c0c0c0;
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
 }
 
-.rioch-events-list {
-    space-y: 1rem;
+.rioch-rank-3 {
+    border-color: #cd7f32;
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.3);
 }
 
-.rioch-event {
+.rioch-guild-rank {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    min-width: 60px;
 }
 
-.rioch-event-time {
-    color: var(--rioch-accent);
+.rioch-guild-rank i {
+    font-size: 2rem;
+    color: var(--rioch-gold);
+}
+
+.rioch-guild-rank span {
     font-weight: 700;
-    font-family: var(--rioch-font-tech);
+    color: var(--rioch-text);
 }
 
-.rioch-event-name {
-    font-weight: 500;
+.rioch-guild-emblem {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--rioch-accent);
+}
+
+.rioch-guild-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rioch-guild-info {
+    flex: 1;
+}
+
+.rioch-guild-info h4 {
+    font-size: 1.3rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.rioch-guild-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.rioch-guild-stats span {
+    font-size: 0.8rem;
+    color: var(--rioch-text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.rioch-guild-leader {
+    font-size: 0.9rem;
+    color: var(--rioch-accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.rioch-guild-power {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--rioch-gold);
+    min-width: 120px;
+    text-align: right;
+}
+
+.rioch-guild-benefits h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+}
+
+.rioch-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.rioch-benefit-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rioch-benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--rioch-glow);
+    border-color: var(--rioch-accent);
+}
+
+.rioch-benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--rioch-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.rioch-benefit-content h4 {
+    font-size: 1.2rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.rioch-benefit-value {
+    font-size: 1.1rem;
+    color: var(--rioch-gold);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.rioch-benefit-content p {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
 }
 
 /* ===== RIO CH DOWNLOAD SECTION ===== */
 .rioch-download {
     padding: 8rem 0;
-    background: var(--rioch-dark);
+    background: linear-gradient(135deg, var(--rioch-darker), var(--rioch-dark));
 }
 
 .rioch-download-content {
@@ -1254,7 +1635,7 @@ body {
     font-family: var(--rioch-font-display);
     font-size: 3rem;
     margin-bottom: 2rem;
-    background: var(--rioch-gold);
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1262,93 +1643,166 @@ body {
 
 .rioch-download-left p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
+    margin-bottom: 3rem;
+    color: var(--rioch-text-muted);
     line-height: 1.6;
 }
 
 .rioch-download-features {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
-.rioch-feature {
+.rioch-download-feature {
     display: flex;
     align-items: center;
     gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid var(--rioch-border);
+}
+
+.rioch-download-feature i {
+    color: var(--rioch-accent);
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.rioch-feature-text h4 {
+    color: var(--rioch-text);
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.rioch-feature-text p {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.rioch-download-actions {
+    margin-bottom: 3rem;
+}
+
+.rioch-btn-download-main {
+    background: var(--rioch-accent);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--rioch-font-primary);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
 }
 
-.rioch-feature i {
-    color: var(--rioch-success);
+.rioch-btn-download-main:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--rioch-glow);
+}
+
+.rioch-btn-download-main i {
+    font-size: 2rem;
+}
+
+.rioch-btn-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rioch-btn-title {
     font-size: 1.2rem;
+    line-height: 1;
 }
 
-.rioch-download-buttons {
+.rioch-btn-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.rioch-download-alternatives {
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
 }
 
-.rioch-btn-mega {
-    background: var(--rioch-primary);
-    color: white;
-    box-shadow: var(--rioch-shadow);
-    position: relative;
-}
-
-.rioch-btn-torrent {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    box-shadow: var(--rioch-shadow);
-}
-
-.rioch-btn-glow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    opacity: 0;
-    background: rgba(255, 255, 255, 0.2);
+.rioch-btn-alt {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--rioch-border);
+    color: var(--rioch-text);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: var(--rioch-font-primary);
+    font-weight: 600;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.rioch-btn:hover .rioch-btn-glow {
-    opacity: 1;
-    animation: riochGlow 1s infinite;
+.rioch-btn-alt:hover {
+    background: var(--rioch-accent);
+    border-color: var(--rioch-accent);
+    transform: translateY(-2px);
 }
 
-.rioch-system-req {
+.rioch-system-requirements {
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
     border-radius: 15px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    padding: 2rem;
+    backdrop-filter: blur(20px);
 }
 
-.rioch-system-req h4 {
-    margin-bottom: 1rem;
-    color: var(--rioch-accent);
+.rioch-system-requirements h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--rioch-text);
+    font-weight: 700;
+}
+
+.rioch-requirements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.rioch-req-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.rioch-req-label {
+    color: var(--rioch-text-muted);
     font-weight: 600;
 }
 
-.rioch-system-req p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-    opacity: 0.8;
+.rioch-req-value {
+    color: var(--rioch-text);
+    font-weight: 500;
 }
 
-.rioch-download-right {
-    position: relative;
-}
-
-.rioch-download-preview {
+.rioch-game-preview {
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--rioch-border);
     border-radius: 20px;
     padding: 2rem;
-    border: 1px solid rgba(255, 107, 53, 0.2);
     backdrop-filter: blur(20px);
 }
 
@@ -1356,17 +1810,17 @@ body {
     background: var(--rioch-darker);
     border-radius: 15px;
     overflow: hidden;
-    border: 1px solid rgba(255, 107, 53, 0.3);
+    border: 1px solid var(--rioch-border);
+    box-shadow: var(--rioch-shadow);
 }
 
 .rioch-window-header {
-    background: var(--rioch-primary);
+    background: var(--rioch-surface);
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: white;
-    font-weight: 600;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rioch-border);
 }
 
 .rioch-window-controls {
@@ -1374,24 +1828,31 @@ body {
     gap: 0.5rem;
 }
 
-.rioch-window-controls span {
+.rioch-control {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7);
 }
 
-.rioch-window-controls span:nth-child(1) { background: #ff5f57; }
-.rioch-window-controls span:nth-child(2) { background: #ffbd2e; }
-.rioch-window-controls span:nth-child(3) { background: #28ca42; }
+.rioch-close { background: #ff5f57; }
+.rioch-minimize { background: #ffbd2e; }
+.rioch-maximize { background: #28ca42; }
+
+.rioch-window-title {
+    color: var(--rioch-text);
+    font-weight: 600;
+}
 
 .rioch-game-screen {
-    height: 300px;
-    background: linear-gradient(135deg, var(--rioch-dark), var(--rioch-darker));
+    height: 350px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+}
+
+.rioch-game-screenshot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .rioch-game-ui {
@@ -1401,244 +1862,166 @@ body {
     right: 1rem;
 }
 
-.rioch-hp-bar, .rioch-mp-bar, .rioch-exp-bar {
-    background: rgba(0, 0, 0, 0.7);
+.rioch-ui-element {
+    background: rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
     border-radius: 5px;
     margin-bottom: 0.5rem;
     font-family: var(--rioch-font-tech);
     font-size: 0.8rem;
-    color: var(--rioch-white);
+    color: var(--rioch-text);
+    border: 1px solid var(--rioch-border);
 }
 
-.rioch-character-preview {
-    width: 100px;
-    height: 150px;
-    background: var(--rioch-primary);
-    border-radius: 50px;
-    position: relative;
-    animation: riochFloat 3s ease-in-out infinite;
-    opacity: 0.8;
-}
-
-/* ===== RIO CH GUILD SECTION ===== */
-.rioch-guild {
-    padding: 8rem 0;
-    background: linear-gradient(135deg, var(--rioch-darker), var(--rioch-dark));
-}
-
-.rioch-guild-ranking {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-.rioch-guild-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    backdrop-filter: blur(20px);
-    transition: all 0.3s ease;
-    position: relative;
+.rioch-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-top: 0.3rem;
     overflow: hidden;
 }
 
-.rioch-rank-1 {
-    border-color: #ffd700;
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+.rioch-health-bar {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+    width: 85%;
 }
 
-.rioch-rank-2 {
-    border-color: #c0c0c0;
-    box-shadow: 0 0 30px rgba(192, 192, 192, 0.3);
+.rioch-mana-bar {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    width: 70%;
 }
 
-.rioch-rank-3 {
-    border-color: #cd7f32;
-    box-shadow: 0 0 30px rgba(205, 127, 50, 0.3);
+.rioch-experience-bar {
+    background: linear-gradient(90deg, var(--rioch-gold), var(--rioch-accent));
+    width: 78%;
 }
 
-.rioch-guild-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--rioch-glow);
+.rioch-character-display {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
 }
 
-.rioch-guild-rank {
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.rioch-guild-emblem {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.rioch-guild-info h3 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--rioch-accent);
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-.rioch-guild-info p {
-    text-align: center;
-    opacity: 0.8;
-    margin-bottom: 1rem;
-}
-
-.rioch-guild-stats {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-}
-
-.rioch-guild-power {
-    text-align: center;
-    font-weight: 700;
-    color: var(--rioch-yang);
-    font-size: 1.1rem;
-}
-
-.rioch-guild-benefits {
-    text-align: center;
-}
-
-.rioch-guild-benefits h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    background: var(--rioch-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.rioch-benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.rioch-benefit {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 107, 53, 0.2);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.rioch-benefit:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--rioch-glow);
-}
-
-.rioch-benefit i {
-    color: var(--rioch-accent);
-    font-size: 1.5rem;
+.rioch-char-model {
+    width: 80px;
+    height: 120px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(233, 69, 96, 0.6));
+    animation: riochFloat 3s ease-in-out infinite;
 }
 
 /* ===== RIO CH FOOTER ===== */
 .rioch-footer {
     background: var(--rioch-darker);
     padding: 4rem 0 2rem;
-    border-top: 1px solid rgba(255, 107, 53, 0.3);
+    border-top: 1px solid var(--rioch-border);
 }
 
 .rioch-footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 3rem;
     margin-bottom: 3rem;
 }
 
-.rioch-footer-logo h3 {
+.rioch-footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.rioch-footer-emblem {
+    width: 60px;
+    height: 60px;
+    background: var(--rioch-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+}
+
+.rioch-footer-brand h3 {
     font-family: var(--rioch-font-display);
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    background: var(--rioch-gold);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--rioch-gold), var(--rioch-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1;
 }
 
-.rioch-footer-logo p {
-    opacity: 0.8;
+.rioch-footer-brand span {
+    color: var(--rioch-text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.rioch-footer-description {
+    color: var(--rioch-text-muted);
     line-height: 1.6;
     margin-bottom: 2rem;
 }
 
-.rioch-social-links {
+.rioch-social-media {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
-.rioch-social-links a {
+.rioch-social-link {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1rem;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 25px;
-    color: var(--rioch-white);
+    border: 1px solid var(--rioch-border);
+    border-radius: 8px;
+    color: var(--rioch-text);
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    font-weight: 500;
 }
 
-.rioch-social-discord:hover {
-    background: #7289da;
+.rioch-social-link:hover {
     transform: translateY(-2px);
+    border-color: var(--rioch-accent);
 }
 
-.rioch-social-youtube:hover {
-    background: #ff0000;
-    transform: translateY(-2px);
-}
-
-.rioch-social-facebook:hover {
-    background: #1877f2;
-    transform: translateY(-2px);
-}
-
-.rioch-social-instagram:hover {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    transform: translateY(-2px);
-}
+.rioch-discord:hover { background: #7289da; border-color: #7289da; }
+.rioch-youtube:hover { background: #ff0000; border-color: #ff0000; }
+.rioch-facebook:hover { background: #1877f2; border-color: #1877f2; }
+.rioch-instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c); border-color: #f09433; }
 
 .rioch-footer-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    color: var(--rioch-accent);
-    font-weight: 600;
+    color: var(--rioch-text);
+    font-weight: 700;
 }
 
-.rioch-footer-section ul {
+.rioch-footer-links {
     list-style: none;
 }
 
-.rioch-footer-section ul li {
+.rioch-footer-links li {
     margin-bottom: 0.8rem;
 }
 
-.rioch-footer-section ul li a {
-    color: var(--rioch-white);
+.rioch-footer-links a {
+    color: var(--rioch-text-muted);
     text-decoration: none;
-    opacity: 0.8;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
-.rioch-footer-section ul li a:hover {
-    opacity: 1;
+.rioch-footer-links a:hover {
     color: var(--rioch-accent);
     transform: translateX(5px);
 }
@@ -1648,35 +2031,60 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--rioch-border);
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 .rioch-footer-left p {
     margin-bottom: 0.5rem;
-    opacity: 0.8;
+    color: var(--rioch-text-muted);
 }
 
-.rioch-dev-signature {
+.rioch-developer-credit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-weight: 700;
-    background: var(--rioch-primary);
+    background: linear-gradient(135deg, var(--rioch-accent), var(--rioch-gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.rioch-server-status-footer {
+.rioch-server-status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rioch-status-indicator {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
-/* ===== RIO CH PROTECTION MODAL ===== */
+.rioch-status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--rioch-accent);
+    animation: riochDragonPulse 2s infinite;
+}
+
+.rioch-status-text {
+    color: var(--rioch-text);
+    font-weight: 600;
+}
+
+.rioch-player-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--rioch-text-muted);
+}
+
+/* ===== RIO CH MODAL ===== */
 .rioch-modal {
     display: none;
     position: fixed;
@@ -1690,7 +2098,7 @@ body {
 }
 
 .rioch-modal-content {
-    background: linear-gradient(135deg, var(--rioch-darker), var(--rioch-dark));
+    background: linear-gradient(135deg, var(--rioch-darker), var(--rioch-surface));
     margin: 10% auto;
     padding: 0;
     border-radius: 20px;
@@ -1703,24 +2111,32 @@ body {
 }
 
 .rioch-modal-header {
-    background: var(--rioch-primary);
+    background: var(--rioch-accent);
     color: white;
     padding: 2rem;
     text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 1rem;
 }
 
-.rioch-shield-spin {
+.rioch-modal-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 2.5rem;
-    animation: riochDragonRotate 2s linear infinite;
+    animation: riochDragonPulse 2s infinite;
 }
 
 .rioch-modal-header h2 {
     font-size: 1.5rem;
     font-weight: 700;
+    margin: 0;
 }
 
 .rioch-modal-body {
@@ -1757,48 +2173,78 @@ body {
     100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
 }
 
+.rioch-warning-message {
+    font-weight: 700;
+    color: var(--rioch-accent);
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+}
+
 .rioch-modal-body p {
     margin-bottom: 1rem;
     font-size: 1.1rem;
     position: relative;
     z-index: 1;
+    color: var(--rioch-text-muted);
 }
 
-.rioch-modal-body p:first-of-type {
-    font-weight: 700;
-    color: var(--rioch-accent);
-    font-size: 1.3rem;
-}
-
-.rioch-modal-emojis {
-    font-size: 2rem;
+.rioch-modal-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
     margin: 1.5rem 0;
     position: relative;
     z-index: 1;
+    flex-wrap: wrap;
 }
 
-.rioch-modal-emojis span {
-    display: inline-block;
-    margin: 0 0.5rem;
-    animation: riochFloat 2s ease-in-out infinite;
+.rioch-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid var(--rioch-accent);
+    border-radius: 15px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    color: var(--rioch-accent);
+    font-weight: 600;
 }
-
-.rioch-modal-emojis span:nth-child(1) { animation-delay: 0s; }
-.rioch-modal-emojis span:nth-child(2) { animation-delay: -0.5s; }
-.rioch-modal-emojis span:nth-child(3) { animation-delay: -1s; }
-.rioch-modal-emojis span:nth-child(4) { animation-delay: -1.5s; }
 
 .rioch-modal-footer {
     padding: 1.5rem 2rem 2rem;
     text-align: center;
 }
 
-/* ===== RIO CH DEVELOPER WATERMARK ===== */
+.rioch-btn-modal-close {
+    background: var(--rioch-accent);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+    font-family: var(--rioch-font-primary);
+}
+
+.rioch-btn-modal-close:hover {
+    background: #d63851;
+    transform: translateY(-2px);
+}
+
+/* ===== RIO CH WATERMARK ===== */
 .rioch-dev-watermark {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: var(--rioch-primary);
+    background: var(--rioch-accent);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 25px;
@@ -1808,7 +2254,11 @@ body {
     z-index: 9999;
     opacity: 0.8;
     transition: all 0.3s ease;
-    animation: riochGlow 3s infinite;
+    animation: riochDragonPulse 4s infinite;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .rioch-dev-watermark:hover {
@@ -1816,36 +2266,28 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== RIO CH SCROLLBAR ===== */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--rioch-darker);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--rioch-primary);
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--rioch-accent);
-}
-
-/* ===== RIO CH RESPONSIVE DESIGN ===== */
+/* ===== RIO CH RESPONSIVE ===== */
 @media (max-width: 1200px) {
     .rioch-container {
         padding: 0 1.5rem;
     }
     
     .rioch-title-main {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
     
     .rioch-section-title {
         font-size: 3rem;
+    }
+    
+    .rioch-guild-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .rioch-footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
     }
 }
 
@@ -1858,16 +2300,8 @@ body {
         display: flex;
     }
     
-    .rioch-logo-text {
-        font-size: 1.4rem;
-    }
-    
-    .rioch-logo-subtitle {
-        font-size: 0.7rem;
-    }
-    
     .rioch-title-main {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     
     .rioch-title-sub {
@@ -1878,12 +2312,12 @@ body {
         font-size: 1.1rem;
     }
     
-    .rioch-server-status {
+    .rioch-server-stats {
         flex-direction: column;
         gap: 1.5rem;
     }
     
-    .rioch-hero-buttons {
+    .rioch-hero-actions {
         flex-direction: column;
         align-items: center;
     }
@@ -1893,15 +2327,15 @@ body {
         gap: 1rem;
     }
     
-    .rioch-section-title {
-        font-size: 2.5rem;
+    .rioch-features-grid,
+    .rioch-characters-showcase {
+        grid-template-columns: 1fr;
     }
     
-    .rioch-features-grid,
-    .rioch-characters-showcase,
-    .rioch-server-grid,
-    .rioch-guild-ranking {
-        grid-template-columns: 1fr;
+    .rioch-gallery-large {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 300px;
     }
     
     .rioch-download-content {
@@ -1910,22 +2344,15 @@ body {
         text-align: center;
     }
     
-    .rioch-download-buttons {
-        justify-content: center;
+    .rioch-footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
     
     .rioch-footer-bottom {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
-    }
-    
-    .rioch-social-links {
-        justify-content: center;
-    }
-    
-    .rioch-benefits-grid {
-        grid-template-columns: 1fr;
     }
     
     .rioch-dev-watermark {
@@ -1935,7 +2362,7 @@ body {
 
 @media (max-width: 480px) {
     .rioch-nav-container {
-        padding: 1rem;
+        padding: 0 1rem;
     }
     
     .rioch-container {
@@ -1943,7 +2370,7 @@ body {
     }
     
     .rioch-title-main {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     .rioch-title-sub {
@@ -1951,7 +2378,7 @@ body {
     }
     
     .rioch-section-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     
     .rioch-btn {
@@ -1964,51 +2391,36 @@ body {
         width: 95%;
     }
     
-    .rioch-features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .rioch-feature-card {
-        padding: 2rem;
-    }
-    
     .rioch-server-rates {
         grid-template-columns: 1fr;
     }
     
-    .rioch-rate-item {
-        min-width: auto;
+    .rioch-download-alternatives {
+        flex-direction: column;
     }
 }
 
-/* ===== RIO CH UTILITY CLASSES ===== */
-.rioch-text-glow {
-    text-shadow: 0 0 20px currentColor;
-}
-
-.rioch-box-glow {
-    box-shadow: var(--rioch-glow);
-}
-
-.rioch-fadeIn {
-    animation: riochSlideUp 0.6s ease-out;
-}
-
-.rioch-float {
-    animation: riochFloat 3s ease-in-out infinite;
-}
-
-/* ===== RIO CH LOADING ANIMATION ===== */
+/* ===== RIO CH LOADED STATE ===== */
 .rioch-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-/* ===== RIO CH FINAL SIGNATURE ===== */
+/* Stat bar animations */
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="95"] { width: 95%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="90"] { width: 90%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="88"] { width: 88%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="85"] { width: 85%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="78"] { width: 78%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="75"] { width: 75%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="70"] { width: 70%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="65"] { width: 65%; }
+.rioch-char-card.rioch-visible .rioch-stat-fill[data-width="80"] { width: 80%; }
+
 /*
- * 🚀 KUZENLER MT2 - RIO CH Masterpiece 🚀
+ * RIO CH GAMING EXCELLENCE - PROFESSIONAL CSS
  * 
+ * This stylesheet is the intellectual property of RIO CH
  * Crafted with Excellence, Passion and Innovation
  * Professional Metin2 Gaming Experience
  * 
@@ -2017,13 +2429,17 @@ body {
  * 
  * All Rights Reserved © RIO CH
  * 
- * Features:
- * ✅ Responsive Design
- * ✅ Battle Animations
- * ✅ Code Protection
- * ✅ Modern UI/UX
- * ✅ Mobile Optimized
+ * Features Implemented:
+ * ✅ Professional Dark Theme Design
+ * ✅ Advanced Battle Animations
+ * ✅ Responsive Mobile Layout
+ * ✅ Interactive UI Elements
+ * ✅ Professional Typography
  * ✅ Gaming Aesthetics
+ * ✅ Smooth Transitions
+ * ✅ Modern Grid Layouts
+ * ✅ Professional Color Palette
+ * ✅ Advanced Visual Effects
  * 
- * 🎮 The Ultimate Metin2 Experience 🎮
+ * 🔥 DEVELOPED WITH PASSION BY RIO CH 🔥
  */
